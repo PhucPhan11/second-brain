@@ -1,1 +1,1 @@
-When I say "remember X" (or "remeber X"), run: python .second-brain/tools/capture.py "X"
+When I say "remember X" (or "remeber X"), run: python tools/capture.py "X"
