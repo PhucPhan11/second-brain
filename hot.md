@@ -1,2 +1,4 @@
 - deploys will go out Tuesday 9am
 - check monitor for applications every morning
+- pefima data will sync every monday
+- not deploy prod on Monday
