@@ -4,6 +4,17 @@ Tập đoàn tiêu dùng – bán lẻ (hàng tiêu dùng, bán lẻ, thịt ch�
 
 ---
 
+### [[invest/daily/2026/10/2026-10-23|2026-10-23]]: Báo cáo chủ đề TMĐT – chuỗi bán lẻ
+- **TCBS:** đánh giá MSN là **cơ hội đầu tư hấp dẫn** (2026-10-23), không có xếp hạng hay giá mục tiêu chính thức.
+- **Luận điểm:** WinCommerce tăng doanh thu 28% trong 6 tháng 2026, gấp hơn 2 lần thị trường. Lợi nhuận tăng mạnh nhưng giá MSN giảm 15% trong 12 tháng, **P/E ~15**, thấp nhất từ 2021.
+- **Rủi ro:** cạnh tranh từ sàn TMĐT (11% tổng bán lẻ, tăng 34–53%/năm).
+- TCBS tiếp tục ưu tiên MSN trong báo cáo KQKD toàn thị trường (06/11). → [[invest/themes/ket-qua-kinh-doanh-thi-truong|ket-qua-kinh-doanh-thi-truong]]
+- → [[invest/themes/thuong-mai-dien-tu-ban-le|thuong-mai-dien-tu-ban-le]]
+- Nguồn: [Báo cáo chủ đề TCBS](https://www.tcbs.com.vn/wp-content/uploads/2026/10/23102026_Thuong_mai_dien_tu_mo_rong_nhanh_chuoi_ban_le_niem_yet_co_bi_anh_huong.pdf)
+
+**Quyết định của mình:**
+
+
 ### [[invest/daily/2026/11/2026-11-26|2026-11-26]]
 - **TCBS:** không có khuyến nghị (2026-11-26). Chỉ có tin doanh nghiệp.
 - **Tin:**
