@@ -62,7 +62,8 @@ Rules:
 - A committed graphify-out/graph.json is rewritten whole on every build, so a large diff to it in a pull request is expected. Do not flag it as churn or suggest skipping the graph rebuild or its hooks.
 
 Repo-specific (second-brain is mostly notes, not code):
-- `graphify update .` only refreshes the 3 scripts (`tools/capture.py`, `.claude/skills/dream/scripts/*`). After adding or editing notes in `ai/`, `invest/`, `notes/` or the root files, the graph is stale for those notes until `/graphify . --update` runs. That re-extracts the changed notes with an LLM and costs tokens, so **ask the user before running it**; never run it automatically after each edit.
+- `graphify update .` only refreshes the 3 scripts (`tools/capture.py`, `.claude/skills/dream/scripts/*`). After adding or editing notes in `ai/`, `invest/`, `notes/` or the root files, the graph is stale for those notes until `/graphify . --update` runs. That re-extracts the changed notes with an LLM and costs tokens.
+- Auto-update (approved by the user on 2026-11-27): the Stop hook `.claude/hooks/graphify_stale.py` checks freshness at the end of every turn. If only code changed it runs `graphify update .` itself. If notes changed it blocks the stop once and asks you to run `/graphify . --update`. When that happens, run it right away without asking, report the token cost briefly, and don't commit.
 - Use the graph mainly for cross-domain questions, e.g. `graphify query "which tickers are affected by Section 301"`, `graphify path "Planner-Executor Model Routing" "Dreamer Agent"`, `graphify explain "Token Tax"`. For a single known note, just read the note.
 - If the graph and a note disagree, the note wins (the graph may be stale). Mention the mismatch.
 - Known limitation of the current build: 20 dangling edges, from mismatched code-node IDs between the AST and note extraction.

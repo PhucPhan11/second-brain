@@ -2,3 +2,4 @@ inbox/**/*.eml
 inbox/_cache/
 graphify-out/cache/
 graphify-out/.graphify_*
+graphify-out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]/

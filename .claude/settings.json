@@ -21,6 +21,18 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/Users/pttphuc/AppData/Local/Programs/Python/Python314/python.exe -I C:/Work/Project/second-brain/.claude/hooks/graphify_stale.py",
+            "timeout": 120,
+            "statusMessage": "Checking graphify graph freshness..."
+          }
+        ]
+      }
     ]
   }
 }

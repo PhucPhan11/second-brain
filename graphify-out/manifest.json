@@ -30,10 +30,10 @@
     "semantic_hash": "8ef2b811744de3abfb11ddfaf7d57a72"
   },
   "CLAUDE.md": {
-    "mtime": 1795765450.4507108,
-    "seen": 1795766301.9429348,
-    "ast_hash": "21b11a39831a139220dae864a3e1cb78",
-    "semantic_hash": "21b11a39831a139220dae864a3e1cb78"
+    "mtime": 1795773430.4462683,
+    "seen": 1795773649.4747362,
+    "ast_hash": "86b7aa0719b8150ff794dfc35d699284",
+    "semantic_hash": "86b7aa0719b8150ff794dfc35d699284"
   },
   "README.md": {
     "mtime": 1790327974.5971951,
@@ -102,10 +102,10 @@
     "semantic_hash": "d7688ed78cbe173ece4a93cc68158fbc"
   },
   "invest/reports/index.md": {
-    "mtime": 1795765449.534765,
-    "seen": 1795766301.9430013,
-    "ast_hash": "5ca197a7685172b837cb05fe17cb3e6a",
-    "semantic_hash": "5ca197a7685172b837cb05fe17cb3e6a"
+    "mtime": 1795770272.120999,
+    "seen": 1795772761.9135869,
+    "ast_hash": "ef6e72fc19960d0c34bb8c9cdc0eabe1",
+    "semantic_hash": "ef6e72fc19960d0c34bb8c9cdc0eabe1"
   },
   "invest/themes/us-section-301.md": {
     "mtime": 1795765440.2221124,
@@ -120,16 +120,16 @@
     "semantic_hash": "627fb0fc87744081551f7e99976c5958"
   },
   "invest/tickers/GMD.md": {
-    "mtime": 1795765444.561995,
-    "seen": 1795766301.9430175,
-    "ast_hash": "5950dc21a2c98a62c39f99c75f79319a",
-    "semantic_hash": "5950dc21a2c98a62c39f99c75f79319a"
+    "mtime": 1795767732.7144148,
+    "seen": 1795772761.9136822,
+    "ast_hash": "1af21fe568edc469a34caa73ca5aba6f",
+    "semantic_hash": "1af21fe568edc469a34caa73ca5aba6f"
   },
   "invest/tickers/MSN.md": {
-    "mtime": 1795765446.7507396,
-    "seen": 1795766301.943023,
-    "ast_hash": "8dd1a8ba4285bada3dab4a9e617a16fc",
-    "semantic_hash": "8dd1a8ba4285bada3dab4a9e617a16fc"
+    "mtime": 1795769913.4133513,
+    "seen": 1795772761.9136932,
+    "ast_hash": "bf166e53490aa88b64bc09afb1926f0c",
+    "semantic_hash": "bf166e53490aa88b64bc09afb1926f0c"
   },
   "invest/tickers/VNM.md": {
     "mtime": 1795765448.6444714,
@@ -154,5 +154,371 @@
     "seen": 1795766301.9430463,
     "ast_hash": "d335506be07c8bb517bf6cfecb0b04be",
     "semantic_hash": "d335506be07c8bb517bf6cfecb0b04be"
+  },
+  ".claude/settings.json": {
+    "mtime": 1795773416.3740847,
+    "seen": 1795773649.474695,
+    "ast_hash": "0902aab8693667fb0234e04996b7c66e",
+    "semantic_hash": "0902aab8693667fb0234e04996b7c66e"
+  },
+  "ai/sources/the-batch/2026-10-02.md": {
+    "mtime": 1795772004.6992264,
+    "seen": 1795772761.9134583,
+    "ast_hash": "edbb1a56537b47778e7098601e3663c0",
+    "semantic_hash": "edbb1a56537b47778e7098601e3663c0"
+  },
+  "ai/sources/the-batch/2026-10-30.md": {
+    "mtime": 1795772004.77136,
+    "seen": 1795772761.9134617,
+    "ast_hash": "ab0498f1e035eeda5d0e769956db096e",
+    "semantic_hash": "ab0498f1e035eeda5d0e769956db096e"
+  },
+  "ai/sources/the-batch/2026-11-06.md": {
+    "mtime": 1795772004.824335,
+    "seen": 1795772761.913465,
+    "ast_hash": "797d4e49f2d1e2ea7d9a70398623ac89",
+    "semantic_hash": "797d4e49f2d1e2ea7d9a70398623ac89"
+  },
+  "ai/sources/the-batch/2026-11-13.md": {
+    "mtime": 1795772004.876407,
+    "seen": 1795772761.9134681,
+    "ast_hash": "39de7f2aad7c2937f7ff7f6817159efd",
+    "semantic_hash": "39de7f2aad7c2937f7ff7f6817159efd"
+  },
+  "invest/daily/2026/10/2026-10-23.md": {
+    "mtime": 1795770198.7380714,
+    "seen": 1795772761.913504,
+    "ast_hash": "50faec1c40899010391ffbbf8d99fce3",
+    "semantic_hash": "50faec1c40899010391ffbbf8d99fce3"
+  },
+  "invest/daily/2026/10/2026-10-26.md": {
+    "mtime": 1795770198.7404761,
+    "seen": 1795772761.9135137,
+    "ast_hash": "04d8f6c7dd47ac32dce9812e86e0e4c2",
+    "semantic_hash": "04d8f6c7dd47ac32dce9812e86e0e4c2"
+  },
+  "invest/daily/2026/10/2026-10-27.md": {
+    "mtime": 1795770198.7429984,
+    "seen": 1795772761.91352,
+    "ast_hash": "d5cc53515a50d37cfe70bec0fc63df04",
+    "semantic_hash": "d5cc53515a50d37cfe70bec0fc63df04"
+  },
+  "invest/daily/2026/10/2026-10-28.md": {
+    "mtime": 1795770198.752357,
+    "seen": 1795772761.913525,
+    "ast_hash": "c7ecbb10d324d08c25e7911ca03384a5",
+    "semantic_hash": "c7ecbb10d324d08c25e7911ca03384a5"
+  },
+  "invest/daily/2026/10/2026-10-30.md": {
+    "mtime": 1795770198.755412,
+    "seen": 1795772761.9135303,
+    "ast_hash": "b5681004ee6c1f97b8cf3c7bc7ea27b6",
+    "semantic_hash": "b5681004ee6c1f97b8cf3c7bc7ea27b6"
+  },
+  "invest/daily/2026/11/2026-11-03.md": {
+    "mtime": 1795770198.7584252,
+    "seen": 1795772761.9135349,
+    "ast_hash": "aa7738dbe1b3069a0f7f1a70e1bf383b",
+    "semantic_hash": "aa7738dbe1b3069a0f7f1a70e1bf383b"
+  },
+  "invest/daily/2026/11/2026-11-04.md": {
+    "mtime": 1795770198.760427,
+    "seen": 1795772761.91354,
+    "ast_hash": "f8eb34d2715a9fa5a3a0ec254d6a07d5",
+    "semantic_hash": "f8eb34d2715a9fa5a3a0ec254d6a07d5"
+  },
+  "invest/daily/2026/11/2026-11-05.md": {
+    "mtime": 1795770198.7651553,
+    "seen": 1795772761.9135447,
+    "ast_hash": "d00bdd7b750cab1a37b0518cad1cadf6",
+    "semantic_hash": "d00bdd7b750cab1a37b0518cad1cadf6"
+  },
+  "invest/daily/2026/11/2026-11-06.md": {
+    "mtime": 1795770198.7691865,
+    "seen": 1795772761.9135501,
+    "ast_hash": "fea3da961c0ad77a49f108b16cd5c08f",
+    "semantic_hash": "fea3da961c0ad77a49f108b16cd5c08f"
+  },
+  "invest/daily/2026/11/2026-11-09.md": {
+    "mtime": 1795770198.7721927,
+    "seen": 1795772761.9135556,
+    "ast_hash": "2dc383e9bb7e82dd61717b760866efab",
+    "semantic_hash": "2dc383e9bb7e82dd61717b760866efab"
+  },
+  "invest/daily/2026/11/2026-11-10.md": {
+    "mtime": 1795770198.7758393,
+    "seen": 1795772761.9135606,
+    "ast_hash": "53990a1c30504e888dc09080981699ee",
+    "semantic_hash": "53990a1c30504e888dc09080981699ee"
+  },
+  "invest/daily/2026/11/2026-11-12.md": {
+    "mtime": 1795770198.7801752,
+    "seen": 1795772761.9135656,
+    "ast_hash": "67a2c231eb62a88c8a11b463035b3259",
+    "semantic_hash": "67a2c231eb62a88c8a11b463035b3259"
+  },
+  "invest/daily/2026/11/2026-11-23.md": {
+    "mtime": 1795768384.1844008,
+    "seen": 1795772761.9135756,
+    "ast_hash": "ccbfe6c76c277c052525bbb80ca58cce",
+    "semantic_hash": "ccbfe6c76c277c052525bbb80ca58cce"
+  },
+  "invest/daily/2026/11/2026-11-25.md": {
+    "mtime": 1795767696.318056,
+    "seen": 1795772761.913581,
+    "ast_hash": "ce69d13b6f7443ca8dc33090f27f9470",
+    "semantic_hash": "ce69d13b6f7443ca8dc33090f27f9470"
+  },
+  "invest/themes/ket-qua-kinh-doanh-thi-truong.md": {
+    "mtime": 1795769786.2411475,
+    "seen": 1795772761.9135923,
+    "ast_hash": "f1618420a66ea782eedb57652f2c9292",
+    "semantic_hash": "f1618420a66ea782eedb57652f2c9292"
+  },
+  "invest/themes/nganh-bat-dong-san.md": {
+    "mtime": 1795769787.733608,
+    "seen": 1795772761.9135969,
+    "ast_hash": "3dbb5bfbe51e771c93bc6d62930e3630",
+    "semantic_hash": "3dbb5bfbe51e771c93bc6d62930e3630"
+  },
+  "invest/themes/nganh-cang-bien.md": {
+    "mtime": 1795767696.9365287,
+    "seen": 1795772761.9136019,
+    "ast_hash": "92faf943158e82e1ebe5b916d9cf5e65",
+    "semantic_hash": "92faf943158e82e1ebe5b916d9cf5e65"
+  },
+  "invest/themes/nganh-chung-khoan.md": {
+    "mtime": 1795769788.5928013,
+    "seen": 1795772761.9136062,
+    "ast_hash": "14a790b597e1015063fc62100439bb2f",
+    "semantic_hash": "14a790b597e1015063fc62100439bb2f"
+  },
+  "invest/themes/nganh-hoa-chat.md": {
+    "mtime": 1795767698.047335,
+    "seen": 1795772761.913611,
+    "ast_hash": "cbd4f9ba89570e7ef346ecd8d94a3407",
+    "semantic_hash": "cbd4f9ba89570e7ef346ecd8d94a3407"
+  },
+  "invest/themes/phan-bo-tai-san-tcbs.md": {
+    "mtime": 1795769786.7804866,
+    "seen": 1795772761.9136157,
+    "ast_hash": "ee157d50a68ae8f44100970306b156c3",
+    "semantic_hash": "ee157d50a68ae8f44100970306b156c3"
+  },
+  "invest/themes/thi-truong-trai-phieu.md": {
+    "mtime": 1795769789.5033793,
+    "seen": 1795772761.9136202,
+    "ast_hash": "39283fafa29610e3c4dc71db24319b3f",
+    "semantic_hash": "39283fafa29610e3c4dc71db24319b3f"
+  },
+  "invest/themes/thuong-mai-dien-tu-ban-le.md": {
+    "mtime": 1795769790.6486819,
+    "seen": 1795772761.9136245,
+    "ast_hash": "8b9c87f8aac3b73a2ece23d00f0401b0",
+    "semantic_hash": "8b9c87f8aac3b73a2ece23d00f0401b0"
+  },
+  "invest/themes/vi-mo-viet-nam.md": {
+    "mtime": 1795769785.6728456,
+    "seen": 1795772761.91363,
+    "ast_hash": "e59a3e06dba48271f58b78236ea2e647",
+    "semantic_hash": "e59a3e06dba48271f58b78236ea2e647"
+  },
+  "invest/tickers/BSR.md": {
+    "mtime": 1795769913.3812618,
+    "seen": 1795772761.9136348,
+    "ast_hash": "8067136d8fd55a6f77ac685a548a1f87",
+    "semantic_hash": "8067136d8fd55a6f77ac685a548a1f87"
+  },
+  "invest/tickers/DDV.md": {
+    "mtime": 1795769913.3536582,
+    "seen": 1795772761.913639,
+    "ast_hash": "593029d2172f00088ff7e29168829689",
+    "semantic_hash": "593029d2172f00088ff7e29168829689"
+  },
+  "invest/tickers/DGW.md": {
+    "mtime": 1795767704.5218773,
+    "seen": 1795772761.9136431,
+    "ast_hash": "d3b58f4c8eeffa69361f220d78d67a77",
+    "semantic_hash": "d3b58f4c8eeffa69361f220d78d67a77"
+  },
+  "invest/tickers/DHA.md": {
+    "mtime": 1795768387.0062263,
+    "seen": 1795772761.913646,
+    "ast_hash": "792cb2c1fbcadb5211124077d69f3383",
+    "semantic_hash": "792cb2c1fbcadb5211124077d69f3383"
+  },
+  "invest/tickers/DIG.md": {
+    "mtime": 1795769913.3842685,
+    "seen": 1795772761.9136508,
+    "ast_hash": "f10567217b5d456f203f740831509e24",
+    "semantic_hash": "f10567217b5d456f203f740831509e24"
+  },
+  "invest/tickers/DPM.md": {
+    "mtime": 1795769913.376215,
+    "seen": 1795772761.9136543,
+    "ast_hash": "31064d0a18ff6000114ff4483fe94b57",
+    "semantic_hash": "31064d0a18ff6000114ff4483fe94b57"
+  },
+  "invest/tickers/DPR.md": {
+    "mtime": 1795769913.3677166,
+    "seen": 1795772761.9136581,
+    "ast_hash": "9c038d297e30861c5d718312a364b079",
+    "semantic_hash": "9c038d297e30861c5d718312a364b079"
+  },
+  "invest/tickers/EIB.md": {
+    "mtime": 1795769913.3717182,
+    "seen": 1795772761.9136615,
+    "ast_hash": "9a942358ab3290a1d28701328849516d",
+    "semantic_hash": "9a942358ab3290a1d28701328849516d"
+  },
+  "invest/tickers/FMC.md": {
+    "mtime": 1795769913.355653,
+    "seen": 1795772761.9136653,
+    "ast_hash": "82e24f7564973b2557136f952e54f0b6",
+    "semantic_hash": "82e24f7564973b2557136f952e54f0b6"
+  },
+  "invest/tickers/FPT.md": {
+    "mtime": 1795769913.369717,
+    "seen": 1795772761.9136689,
+    "ast_hash": "aff7a9f6231bddae69bdd3b041ed7901",
+    "semantic_hash": "aff7a9f6231bddae69bdd3b041ed7901"
+  },
+  "invest/tickers/FTS.md": {
+    "mtime": 1795769913.3868153,
+    "seen": 1795772761.9136722,
+    "ast_hash": "08a91ab30b177ab289dba8c7a28a03b5",
+    "semantic_hash": "08a91ab30b177ab289dba8c7a28a03b5"
+  },
+  "invest/tickers/GAS.md": {
+    "mtime": 1795769913.380257,
+    "seen": 1795772761.9136755,
+    "ast_hash": "9bb72158e9aed2f0756c1966a03925ef",
+    "semantic_hash": "9bb72158e9aed2f0756c1966a03925ef"
+  },
+  "invest/tickers/GDA.md": {
+    "mtime": 1795769913.3782554,
+    "seen": 1795772761.9136784,
+    "ast_hash": "3a6a2d875cf6365ea2e3d9c81528f889",
+    "semantic_hash": "3a6a2d875cf6365ea2e3d9c81528f889"
+  },
+  "invest/tickers/HVN.md": {
+    "mtime": 1795769913.3822584,
+    "seen": 1795772761.913686,
+    "ast_hash": "7043877855a89abf6f01cfcb0d81fc35",
+    "semantic_hash": "7043877855a89abf6f01cfcb0d81fc35"
+  },
+  "invest/tickers/KDH.md": {
+    "mtime": 1795769913.3526566,
+    "seen": 1795772761.9136891,
+    "ast_hash": "10d9aaec6d3f1978fa2841c74fc5eedb",
+    "semantic_hash": "10d9aaec6d3f1978fa2841c74fc5eedb"
+  },
+  "invest/tickers/MWG.md": {
+    "mtime": 1795769913.361717,
+    "seen": 1795772761.913696,
+    "ast_hash": "9b8c305f95c1a4167d4de56e494812f4",
+    "semantic_hash": "9b8c305f95c1a4167d4de56e494812f4"
+  },
+  "invest/tickers/NLG.md": {
+    "mtime": 1795769913.38326,
+    "seen": 1795772761.9136996,
+    "ast_hash": "ffd67ba9e731805fa18e799a3ec06284",
+    "semantic_hash": "ffd67ba9e731805fa18e799a3ec06284"
+  },
+  "invest/tickers/OCB.md": {
+    "mtime": 1795769913.357048,
+    "seen": 1795772761.9137027,
+    "ast_hash": "37524a558727fa12d34534d6f7dada43",
+    "semantic_hash": "37524a558727fa12d34534d6f7dada43"
+  },
+  "invest/tickers/PC1.md": {
+    "mtime": 1795769913.3858097,
+    "seen": 1795772761.9137056,
+    "ast_hash": "97410760cc6d4e2405a954d443abbcf5",
+    "semantic_hash": "97410760cc6d4e2405a954d443abbcf5"
+  },
+  "invest/tickers/PNJ.md": {
+    "mtime": 1795769913.439196,
+    "seen": 1795772761.9137087,
+    "ast_hash": "15bbe2fd2dde4f20c22346a8a03ae987",
+    "semantic_hash": "15bbe2fd2dde4f20c22346a8a03ae987"
+  },
+  "invest/tickers/PVD.md": {
+    "mtime": 1795769913.368716,
+    "seen": 1795772761.913712,
+    "ast_hash": "417cde2991667dd313800777951f5b15",
+    "semantic_hash": "417cde2991667dd313800777951f5b15"
+  },
+  "invest/tickers/PVS.md": {
+    "mtime": 1795769913.3637185,
+    "seen": 1795772761.9137151,
+    "ast_hash": "5018e36a195a70ca5ab3dfb0b17e8a88",
+    "semantic_hash": "5018e36a195a70ca5ab3dfb0b17e8a88"
+  },
+  "invest/tickers/PVT.md": {
+    "mtime": 1795769913.3727171,
+    "seen": 1795772761.9137187,
+    "ast_hash": "be541203a2163c90c5653172cd34a927",
+    "semantic_hash": "be541203a2163c90c5653172cd34a927"
+  },
+  "invest/tickers/SCS.md": {
+    "mtime": 1795769913.359695,
+    "seen": 1795772761.913722,
+    "ast_hash": "0dac05eda324472a51fa7ba9321a407f",
+    "semantic_hash": "0dac05eda324472a51fa7ba9321a407f"
+  },
+  "invest/tickers/SHB.md": {
+    "mtime": 1795768386.107381,
+    "seen": 1795772761.9137256,
+    "ast_hash": "e408a8d999805eafc304fde4ce72c621",
+    "semantic_hash": "e408a8d999805eafc304fde4ce72c621"
+  },
+  "invest/tickers/SSI.md": {
+    "mtime": 1795769913.3657176,
+    "seen": 1795772761.913729,
+    "ast_hash": "40d79153faecc7dc1d74030c8e6f0868",
+    "semantic_hash": "40d79153faecc7dc1d74030c8e6f0868"
+  },
+  "invest/tickers/VEA.md": {
+    "mtime": 1795768384.800106,
+    "seen": 1795772761.9137325,
+    "ast_hash": "e0e9ba7e5a10ce72303622b3a6ebbb5e",
+    "semantic_hash": "e0e9ba7e5a10ce72303622b3a6ebbb5e"
+  },
+  "invest/tickers/VHM.md": {
+    "mtime": 1795769913.3647163,
+    "seen": 1795772761.9137354,
+    "ast_hash": "2072c873b8ec8d572f27298ea7ee5d20",
+    "semantic_hash": "2072c873b8ec8d572f27298ea7ee5d20"
+  },
+  "invest/tickers/VIC.md": {
+    "mtime": 1795769913.355653,
+    "seen": 1795772761.9137383,
+    "ast_hash": "7ab8a3abd0def484a3f31b85b23c7ff9",
+    "semantic_hash": "7ab8a3abd0def484a3f31b85b23c7ff9"
+  },
+  "invest/tickers/VND.md": {
+    "mtime": 1795769913.3740463,
+    "seen": 1795772761.913741,
+    "ast_hash": "7cc934cc9ad99377f682c34b4ad859d7",
+    "semantic_hash": "7cc934cc9ad99377f682c34b4ad859d7"
+  },
+  "invest/tickers/VPB.md": {
+    "mtime": 1795769913.350658,
+    "seen": 1795772761.9137444,
+    "ast_hash": "ddb1a31601a21e2a37bb21ddd904d3c0",
+    "semantic_hash": "ddb1a31601a21e2a37bb21ddd904d3c0"
+  },
+  "invest/tickers/VSC.md": {
+    "mtime": 1795767698.8030384,
+    "seen": 1795772761.9137478,
+    "ast_hash": "fd698dd517bd44005a68db52162ddce0",
+    "semantic_hash": "fd698dd517bd44005a68db52162ddce0"
+  },
+  ".claude/hooks/graphify_stale.py": {
+    "mtime": 1795773401.1434271,
+    "seen": 1795773649.4746735,
+    "ast_hash": "1374e491b568747b9584e7e4d545a594",
+    "semantic_hash": "1374e491b568747b9584e7e4d545a594"
   }
 }
