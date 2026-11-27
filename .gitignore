@@ -1,2 +1,4 @@
 inbox/**/*.eml
 inbox/_cache/
+graphify-out/cache/
+graphify-out/.graphify_*

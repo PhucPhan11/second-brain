@@ -49,3 +49,21 @@ Quy ước:
 - `tickers/` và `themes/` là **file ghi dồn**: chỉ append theo thời gian, mới nhất ở dưới, không sửa hay xoá dòng cũ. Nhận định đổi thì ghi thêm dòng mới.
 - **Mỗi dòng** trong tickers/themes link về daily của ngày đó: `[[invest/daily/YYYY/MM/YYYY-MM-DD|YYYY-MM-DD]]`.
 - Email TCBS thô để ở `inbox/tcbs/`, không commit (`.gitignore`: `inbox/**/*.eml`).
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+Rules:
+- When graphify-out/graph.json exists, run `graphify query "<question>"` before your first grep, search or source-file read for a codebase question, and put this rule in every subagent prompt that explores code. Read raw files only for lines the graph or an earlier read already located. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+- A committed graphify-out/graph.json is rewritten whole on every build, so a large diff to it in a pull request is expected. Do not flag it as churn or suggest skipping the graph rebuild or its hooks.
+
+Repo-specific (second-brain is mostly notes, not code):
+- `graphify update .` only refreshes the 3 scripts (`tools/capture.py`, `.claude/skills/dream/scripts/*`). After adding or editing notes in `ai/`, `invest/`, `notes/` or the root files, the graph is stale for those notes until `/graphify . --update` runs. That re-extracts the changed notes with an LLM and costs tokens, so **ask the user before running it**; never run it automatically after each edit.
+- Use the graph mainly for cross-domain questions, e.g. `graphify query "which tickers are affected by Section 301"`, `graphify path "Planner-Executor Model Routing" "Dreamer Agent"`, `graphify explain "Token Tax"`. For a single known note, just read the note.
+- If the graph and a note disagree, the note wins (the graph may be stale). Mention the mismatch.
+- Known limitation of the current build: 20 dangling edges, from mismatched code-node IDs between the AST and note extraction.
+- Commit `graphify-out/graph.json`, `GRAPH_REPORT.md`, `graph.html`, `manifest.json`, `cost.json`; `graphify-out/cache/` and `graphify-out/.graphify_*` are gitignored.
