@@ -1,0 +1,1755 @@
+Delivered-To: phucphanthanhthien@gmail.com
+Received: by 2002:a05:6830:33ee:b0:862:a986:2401 with SMTP id i14csp6528655otu;
+        Thu, 26 Nov 2026 04:24:35 -0800 (PST)
+X-Received: by 2002:a17:902:e80b:b0:2f0:943:118c with SMTP id d9443c01a7336-2f03f18fceamr199688915ad.25.1795695874814;
+        Thu, 26 Nov 2026 04:24:34 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795695874; cv=none;
+        d=google.com; s=arc-20260327;
+        b=KsefVCMk/XrU6gQUaycKFGvl2lT3wHbQNQbu4UsT+0ALsNPD6EtWM7Cnd0KrMQHPPY
+         4h+qsVq8BzhVWGhhhdQ2CJLwGpAQbHyxWVBEJ7WMXKPyc/NnIUjV00HPcRreJRlkWQiA
+         PD44kgUPCgeyj/GMDMGHS8P3CBh44zdUTI46doQzgQ5H/4rzD73wYjKMus77rM6DkEi8
+         qeYX+r6qTYmhKpTTxfyAdgEMZiOgPt/4IVfKcB0ipbO1UK5S1vYA24Q1lFdumrDJxeUJ
+         4lO1q7uro+JA0d2IEGnzB6SeN9oKObKIAOkXxKIzo/oKcGO2eoPzdt0YsC1ShEfDvEc6
+         KDbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:mime-version:subject:message-id:to:from:date
+         :dkim-signature:dkim-signature;
+        bh=/mg+qnCK96FpbhE4zOJluhb/keYoQLsRWMKb4iUli3E=;
+        fh=TuoPGQyXtSPJf10UXjy1iRbyTpRcb9nyR3wYHwePjCE=;
+        b=SpLsWR+BUsT/G051Riyp3bwgyFN/xEH2ZhXzSH+V5r3r4kU3N+cMoO7++BgQhYaDSb
+         2nBmG9XoOxraa2Jt0ZCgl9pFhogwu4EH5le4JQGMh90c5s84r7YRYQZ0jxWWOq9SX54T
+         rtuFPfFwansWtQ/4Nrbj7TFcVeUxJS3RGo9PqSToTdN5Hr3n3PgDk/kCZcG16op4GaFU
+         Ssu7aPudOdWW7dWZGuIDKktCyN1i7kRkCiUGCTMFa16HTrOS+3WRdwuA6NTF/QkmOczi
+         cqRACfT3BZ4Y7rXGqBAG7ZY9brt0EtpYzBPRO0Pe1kPzlD+Zft/4JKSHQ8MU6xa7ClEV
+         2K7w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tcbs.com.vn header.s=dclb7iygkqnjrwgainobvc4agbvwszx4 header.b=Ey2hf4b8;
+       dkim=pass header.i=@amazonses.com header.s=33l4t57s6hxgsng3hsnbfahbdkoubkgb header.b=M81fMpmO;
+       spf=pass (google.com: domain of 010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000@ap-southeast-1.amazonses.com designates 23.251.232.53 as permitted sender) smtp.mailfrom=010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000@ap-southeast-1.amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tcbs.com.vn
+Return-Path: <010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000@ap-southeast-1.amazonses.com>
+Received: from e232-53.smtp-out.ap-southeast-1.amazonses.com (e232-53.smtp-out.ap-southeast-1.amazonses.com. [23.251.232.53])
+        by mx.google.com with ESMTPS id d9443c01a7336-2f03f1b2fb5si447233405ad.152.2026.11.26.04.24.34
+        for <phucphanthanhthien@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 26 Nov 2026 04:24:34 -0800 (PST)
+Received-SPF: pass (google.com: domain of 010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000@ap-southeast-1.amazonses.com designates 23.251.232.53 as permitted sender) client-ip=23.251.232.53;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tcbs.com.vn header.s=dclb7iygkqnjrwgainobvc4agbvwszx4 header.b=Ey2hf4b8;
+       dkim=pass header.i=@amazonses.com header.s=33l4t57s6hxgsng3hsnbfahbdkoubkgb header.b=M81fMpmO;
+       spf=pass (google.com: domain of 010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000@ap-southeast-1.amazonses.com designates 23.251.232.53 as permitted sender) smtp.mailfrom=010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000@ap-southeast-1.amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tcbs.com.vn
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=dclb7iygkqnjrwgainobvc4agbvwszx4; d=tcbs.com.vn; t=1795695873;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=3i5Ip+iGbJsqYeBJpytzxK/hojL3VsDBUNyUEFQkdAo=;
+	b=Ey2hf4b8PnGDU+9/UheVKJgByvs4EWqRMvICSA7lra/TMKMOxvIU6myn48O7WJvl
+	5RiAC7a9jIEMN2a09X9qDFkJyufAU+ghw1SdvBr0AVRDWp+6f8tx43e/ENEGwYGGrsz
+	RoZ+jMDURplOcDnSWrbP8xDzOnasIl9rrSAkyxOG6zjKEcVDvrfeWHP+ykeqfO/D5zI
+	E3sZAhLN6xkkPtmCBpqL81NMixfw+oDH3UpGh+pHD44UN0WUnOLpDl+Wj3miz+J7tEg
+	FtLWVw1vTvrUVwGb9Sl6eeswQjOvz4+5vbUzTBRZRHh06R0yDt60ZNS7/9+dtNTRdnB
+	u2Sa4hjG/A==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=33l4t57s6hxgsng3hsnbfahbdkoubkgb; d=amazonses.com; t=1795695873;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=3i5Ip+iGbJsqYeBJpytzxK/hojL3VsDBUNyUEFQkdAo=;
+	b=M81fMpmOyJm5wTdpUnqALzOuZ1HcLvz6H6Y4xmSJQ4FJobFMF2+ZuLtL5h5wvJgA
+	NQVOlqfqtdNxQnULEyrVoi3dNJIYkwBnlqy23rSNkxWpNiUTsFQBKHmPPoDjEQCDeIe
+	ExRyrVTnKl5f108Q9y7s8kBzKXkOET8asglJXKVo=
+Date: Thu, 26 Nov 2026 12:24:33 +0000
+From: Techcom Securities <noreply@tcbs.com.vn>
+To: phucphanthanhthien@gmail.com
+Message-ID: <010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000@ap-southeast-1.amazonses.com>
+Subject: =?UTF-8?Q?C=C6=A1_h=E1=BB=99i_=C4=91=E1=BA=A7u_t=C6=B0_|_26/11/2026?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_21739_870300441.1795695873672"
+Feedback-ID: ::1.ap-southeast-1.+rjOdWT2I8kNRP4tqDZ+haWOJr1fXeJcoKm+b3KJj1U=:AmazonSES
+X-SES-Outgoing: 2026.11.26-23.251.232.53
+
+------=_Part_21739_870300441.1795695873672
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><head>
+<!--[if gte mso 15]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta charset=3D"UTF-8"/>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+/>
+<title></title>
+<link rel=3D"preconnect" href=3D"https://fonts.googleapis.com"/>
+<link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossorigin=3D"=
+"/>
+<style>img{-ms-interpolation-mode:bicubic;}
+table, td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+.mceStandardButton, .mceStandardButton td, .mceStandardButton td a{mso-hide=
+:all!important;}
+p, a, li, td, blockquote{mso-line-height-rule:exactly;}
+p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%;-webkit-tex=
+t-size-adjust:100%;}
+.mcnPreviewText{display:none!important;}
+.bodyCell{margin:0 auto;padding:0;width:100%;}
+.ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .E=
+xternalClass span, .ExternalClass font{line-height:100%;}
+.ReadMsgBody, .ExternalClass{width:100%;}
+a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!impo=
+rtant;font-size:inherit!important;font-family:inherit!important;font-weight=
+:inherit!important;line-height:inherit!important;}
+body{height:100%;margin:0;padding:0;width:100%;background:#ffffff;}
+p{margin:0;padding:0;}
+table{border-collapse:collapse;}
+td, p, a{word-break:break-word;}
+h1, h2, h3, h4, h5, h6{display:block;margin:0;padding:0;}
+img, a img{border:0;height:auto;outline:none;text-decoration:none;}
+a[href^=3D"tel"], a[href^=3D"sms"]{color:inherit;cursor:default;text-decora=
+tion:none;}
+.mceColumn .mceButtonLink,
+            .mceColumn-1 .mceButtonLink,=20
+            .mceColumn-2 .mceButtonLink,=20
+            .mceColumn-3 .mceButtonLink,
+            .mceColumn-4 .mceButtonLink{min-width:30px;}
+div[contenteditable=3D"true"]{outline:0;}
+.mceImageBorder{display:inline-block;}
+.mceImageBorder img{border:0!important;}
+body, #bodyTable{background-color:rgb(244, 244, 244);}
+.mceText, .mcnTextContent, .mceLabel{font-family:Arial, "Helvetica Neue", H=
+elvetica, sans-serif;}
+.mceText, .mcnTextContent, .mceLabel{color:rgb(0, 0, 0);}
+.mceText p, .mceText ul, .mceText label, .mceText input{margin-bottom:0;}
+.mceSpacing-12 .mceInput + .mceErrorMessage{margin-top:-6px;}
+.mceSpacing-24 .mceInput + .mceErrorMessage{margin-top:-12px;}
+.mceInput{background-color:transparent;border:2px solid rgb(208, 208, 208);=
+width:60%;color:rgb(77, 77, 77);display:block;}
+.mceInput[type=3D"radio"], .mceInput[type=3D"checkbox"]{float:left;margin-r=
+ight:12px;display:inline;width:auto!important;}
+.mceLabel > .mceInput{margin-bottom:0;margin-top:2px;}
+.mceLabel{display:block;}
+.mceText p, .mcnTextContent p{color:rgb(0, 0, 0);font-family:Arial, "Helvet=
+ica Neue", Helvetica, sans-serif;font-size:18px;font-weight:normal;line-hei=
+ght:1.5;mso-line-height-alt:150%;text-align:center;letter-spacing:0;directi=
+on:ltr;margin:0;}
+.mceText a, .mcnTextContent a{color:rgb(0, 0, 0);font-style:normal;font-wei=
+ght:normal;text-decoration:underline;direction:ltr;}
+p.mcePastedContent, h1.mcePastedContent, h2.mcePastedContent, h3.mcePastedC=
+ontent, h4.mcePastedContent{text-align:left;}
+#d9 p, #d9 h1, #d9 h2, #d9 h3, #d9 h4, #d9 ul{text-align:center;}
+@media only screen and (max-width: 480px) {
+body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:none!importa=
+nt;}
+body{width:100%!important;min-width:100%!important;}
+body.mobile-native{-webkit-user-select:none;user-select:none;transition:tra=
+nsform 0.2s ease-in;transform-origin:top center;}
+colgroup{display:none;}
+.mceLogo img, .mceImage img, .mceSocialFollowIcon img{height:auto!important=
+;}
+.mceWidthContainer{max-width:660px!important;}
+.mceColumn, .mceColumn-2{display:block!important;width:100%!important;}
+.mceColumn-forceSpan{display:table-cell!important;width:auto!important;}
+.mceColumn-forceSpan .mceButton a{min-width:0!important;}
+.mceReverseStack{display:table;width:100%;}
+.mceColumn-1{display:table-footer-group;width:100%!important;}
+.mceColumn-3{display:table-header-group;width:100%!important;}
+.mceColumn-4{display:table-caption;width:100%!important;}
+.mceKeepColumns .mceButtonLink{min-width:0;}
+.mceBlockContainer, .mceSpacing-24{padding-right:16px!important;padding-lef=
+t:16px!important;}
+.mceBlockContainerE2E{padding-right:0;padding-left:0;}
+.mceImage, .mceLogo{width:100%!important;height:auto!important;}
+.mceText img{max-width:100%!important;}
+.mceFooterSection .mceText, .mceFooterSection .mceText p{font-size:16px!imp=
+ortant;line-height:140%!important;}
+.mceText p{margin:0;font-size:18px!important;line-height:1.5!important;mso-=
+line-height-alt:150%;}
+.bodyCell{padding-left:16px!important;padding-right:16px!important;}
+.mceDividerContainer{width:100%!important;}
+#b9 .mceTextBlockContainer, #b223 .mceTextBlockContainer, #b263 .mceTextBlo=
+ckContainer, #b268 .mceTextBlockContainer, #b296 .mceTextBlockContainer, #b=
+298 .mceTextBlockContainer, #b299, #b301, #b308, #b309, #b313 .mceTextBlock=
+Container, #b360 .mceTextBlockContainer, #b365 .mceTextBlockContainer, #b36=
+7 .mceTextBlockContainer, #b368 .mceTextBlockContainer, #b376 .mceTextBlock=
+Container, #b377 .mceTextBlockContainer, #b382 .mceTextBlockContainer, #b42=
+1 .mceTextBlockContainer, #b467 .mceTextBlockContainer, #b483 .mceTextBlock=
+Container, #b484 .mceTextBlockContainer, #b485 .mceTextBlockContainer, #b48=
+6 .mceTextBlockContainer, #b487 .mceTextBlockContainer, #b488 .mceTextBlock=
+Container, #b489 .mceTextBlockContainer, #b490 .mceTextBlockContainer, #b49=
+1 .mceTextBlockContainer, #b492 .mceTextBlockContainer, #b493 .mceTextBlock=
+Container, #b494 .mceTextBlockContainer, #b495 .mceTextBlockContainer, #b49=
+6 .mceTextBlockContainer, #b497 .mceTextBlockContainer{padding:12px 24px!im=
+portant;}
+#gutterContainerId-9, #b28, #gutterContainerId-223, #gutterContainerId-259,=
+ #gutterContainerId-263, #gutterContainerId-268, #gutterContainerId-296, #g=
+utterContainerId-298, #gutterContainerId-300, #gutterContainerId-310, #gutt=
+erContainerId-311, #gutterContainerId-312, #gutterContainerId-313, #gutterC=
+ontainerId-314, #gutterContainerId-315, #gutterContainerId-360, #gutterCont=
+ainerId-365, #gutterContainerId-367, #gutterContainerId-368, #gutterContain=
+erId-376, #gutterContainerId-377, #gutterContainerId-382, #b410, #b411, #gu=
+tterContainerId-421, #gutterContainerId-422, #gutterContainerId-467, #gutte=
+rContainerId-483, #gutterContainerId-484, #gutterContainerId-485, #gutterCo=
+ntainerId-486, #gutterContainerId-487, #gutterContainerId-488, #gutterConta=
+inerId-489, #gutterContainerId-490, #gutterContainerId-491, #gutterContaine=
+rId-492, #gutterContainerId-493, #gutterContainerId-494, #gutterContainerId=
+-495, #gutterContainerId-496, #gutterContainerId-497{padding:0!important;}
+#b28 table, #b299 table, #b301 table, #b308 table, #b309 table, #b410 table=
+, #b411 table{margin-left:auto!important;margin-right:auto!important;float:=
+none!important;}
+#b29{padding:12px 20px 12px 0!important;}
+#b29 table{margin-left:auto!important;float:none!important;}
+#b259 .mceTextBlockContainer, #b314 .mceTextBlockContainer, #b335, #b336, #=
+b366, #b375, #b412{padding:6px 24px!important;}
+#b300 .mceTextBlockContainer, #b310 .mceTextBlockContainer, #b311 .mceTextB=
+lockContainer, #b312 .mceTextBlockContainer, #b315 .mceTextBlockContainer, =
+#b422 .mceTextBlockContainer{padding:0 24px 12px!important;}
+#b335 .mceDividerBlock, #b336 .mceDividerBlock, #b357 .mceDividerBlock, #b3=
+66 .mceDividerBlock, #b375 .mceDividerBlock, #b412 .mceDividerBlock{border-=
+top-width:1px!important;}
+#b357{padding:6px 16px!important;}
+}
+@media only screen and (max-width: 640px) {
+.mceClusterLayout td{padding:4px!important;}
+}</style></head>
+<body>
+<!--[if !gte mso 9]><!----><span class=3D"mcnPreviewText" style=3D"display:=
+none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacit=
+y:0; overflow:hidden; visibility:hidden; mso-hide:all;">Xem ngay c=C3=A1c b=
+=C3=A1o c=C3=A1o ph=C3=A2n t=C3=ADch m=E1=BB=9Bi nh=E1=BA=A5t, nh=E1=BA=ADn=
+ =C4=91=E1=BB=8Bnh th=E1=BB=8B tr=C6=B0=E1=BB=9Dng v=C3=A0 khuy=E1=BA=BFn n=
+gh=E1=BB=8B =C4=91=E1=BA=A7u t=C6=B0 t=E1=BB=AB TCBS</span><!--<![endif]-->
+<!--*|END:IF|*-->
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">=CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=
+=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=
+=87  =CD=8F =E2=80=8C   =E2=80=87  =CD=8F =E2=80=8C   =E2=80=87=C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD</div><!--MCE_TRACKING_=
+PIXEL-->
+<center>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" height=3D"100%" wid=
+th=3D"100%" id=3D"bodyTable" role=3D"presentation" style=3D"background-colo=
+r: rgb(244, 244, 244);">
+<tbody><tr>
+<td class=3D"bodyCell" align=3D"center" valign=3D"top">
+<table id=3D"root" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" role=3D"presentation"><tbody data-block-id=3D"330" class=3D"mceWr=
+apper"><tr><td style=3D"background-color:#f4f4f4" valign=3D"top" align=3D"c=
+enter" class=3D"mceSection330"><!--[if (gte mso 9)|(IE)]><table align=3D"ce=
+nter" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"660" style=
+=3D"width:660px;"><tr><td><![endif]--><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" style=3D"max-width:660px" role=3D"present=
+ation"><tbody><tr><td style=3D"background-color:#f3f3f3" valign=3D"top" cla=
+ss=3D"mceWrapperInner"><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"=
+332"><tbody><tr class=3D"mceRow"><td style=3D"background-position:center;ba=
+ckground-repeat:no-repeat;background-size:cover" valign=3D"top"><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"present=
+ation"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0" valign=3D"to=
+p" class=3D"mceColumn" id=3D"mceColumnId--16" data-block-id=3D"-16" colspan=
+=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"background=
+-color:transparent;padding-top:0;padding-bottom:0;padding-right:0;padding-l=
+eft:0;border:0;border-radius:0" valign=3D"top" class=3D"mceImageBlockContai=
+ner" align=3D"center" id=3D"b410"><div><!--[if !mso]><!--></div><table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" style=3D"border-collapse:separate;margin:0;vertical-align:top;max-width:1=
+00%;width:100%;height:auto" role=3D"presentation" data-testid=3D"image-410"=
+><tbody><tr><td style=3D"border:0;border-radius:0;margin:0" valign=3D"top">=
+<img alt=3D"" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/im=
+ages/90ad6f59-d9c7-e935-c2de-b65e79955519.png" width=3D"660" height=3D"auto=
+" style=3D"display:block;max-width:100%;height:auto;border-radius:0" class=
+=3D"imageDropZone mceImage" data-block-id=3D"410"/></td></tr></tbody></tabl=
+e><div><!--<![endif]--></div><div>
+<!--[if mso]>
+<span class=3D"mceImageBorder" style=3D"border:0;border-width:2px;vertical-=
+align:top;margin:0"><img role=3D"presentation" class=3D"imageDropZone mceIm=
+age" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/images/90ad=
+6f59-d9c7-e935-c2de-b65e79955519.png" alt=3D"" width=3D"660" height=3D"auto=
+" style=3D"display:block;max-width:660px;width:660px;height:auto"/></span>
+<![endif]-->
+</div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody=
+></table></td></tr></tbody></table><!--[if (gte mso 9)|(IE)]></td></tr></ta=
+ble><![endif]--></td></tr></tbody><tbody data-block-id=3D"7" class=3D"mceWr=
+apper"><tr><td style=3D"background-color:#f4f4f4" valign=3D"top" align=3D"c=
+enter" class=3D"mceSection7"><!--[if (gte mso 9)|(IE)]><table align=3D"cent=
+er" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"660" style=3D=
+"width:660px;"><tr><td><![endif]--><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%" style=3D"max-width:660px" role=3D"presentati=
+on"><tbody><tr><td style=3D"background-color:#ffffff" valign=3D"top" class=
+=3D"mceWrapperInner"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"6"=
+><tbody><tr class=3D"mceRow"><td style=3D"background-position:center;backgr=
+ound-repeat:no-repeat;background-size:cover" valign=3D"top"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0" valign=3D"top"=
+ class=3D"mceColumn" id=3D"mceColumnId--12" data-block-id=3D"-12" colspan=
+=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"background=
+-color:transparent;padding-top:0;padding-bottom:0;padding-right:0;padding-l=
+eft:0;border:0;border-radius:0" valign=3D"top" class=3D"mceImageBlockContai=
+ner" align=3D"center" id=3D"b411"><div><!--[if !mso]><!--></div><table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" style=3D"border-collapse:separate;margin:0;vertical-align:top;max-width:1=
+00%;width:100%;height:auto" role=3D"presentation" data-testid=3D"image-411"=
+><tbody><tr><td style=3D"border:0;border-radius:0;margin:0" valign=3D"top">=
+<img alt=3D"" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/im=
+ages/5052e90d-1cc7-67fa-65e2-33c281a57e8d.png" width=3D"660" height=3D"auto=
+" style=3D"display:block;max-width:100%;height:auto;border-radius:0" class=
+=3D"imageDropZone mceImage" data-block-id=3D"411"/></td></tr></tbody></tabl=
+e><div><!--<![endif]--></div><div>
+<!--[if mso]>
+<span class=3D"mceImageBorder" style=3D"border:0;border-width:2px;vertical-=
+align:top;margin:0"><img role=3D"presentation" class=3D"imageDropZone mceIm=
+age" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/images/5052=
+e90d-1cc7-67fa-65e2-33c281a57e8d.png" alt=3D"" width=3D"660" height=3D"auto=
+" style=3D"display:block;max-width:660px;width:660px;height:auto"/></span>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-rig=
+ht:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutt=
+erContainerId-268"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tb=
+ody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding=
+-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b268"><table width=
+=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;bo=
+rder-collapse:separate"><tbody><tr><td style=3D"padding-left:26px;padding-r=
+ight:26px;padding-top:24px;padding-bottom:12px" class=3D"mceTextBlockContai=
+ner"><div data-block-id=3D"268" class=3D"mceText" id=3D"d268" style=3D"widt=
+h:100%"><p style=3D"text-align: center;" class=3D"last-child"><a href=3D"#e=
+ng"><span style=3D"font-size: 18px">English below</span></a></p></div></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style=3D"p=
+adding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"top=
+" class=3D"mceGutterContainer" id=3D"gutterContainerId-365"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top=
+:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;border-radius:0=
+" valign=3D"top" id=3D"b365"><table width=3D"100%" style=3D"border:0;backgr=
+ound-color:transparent;border-radius:0;border-collapse:separate"><tbody><tr=
+><td style=3D"padding-left:26px;padding-right:26px;padding-top:12px;padding=
+-bottom:12px" class=3D"mceTextBlockContainer"><div data-block-id=3D"365" cl=
+ass=3D"mceText" id=3D"d365" style=3D"width:100%"><p class=3D"last-child" st=
+yle=3D"text-align: justify; margin-top: 2px; margin-bottom: 2px;"><strong><=
+span style=3D"font-size: 18px">K=C3=ADnh g=E1=BB=ADi Qu=C3=BD kh=C3=A1ch,</=
+span></strong></p></div></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;=
+padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterCon=
+tainerId-223"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody><=
+tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left=
+:0;border:0;border-radius:0" valign=3D"top" id=3D"b223"><table width=3D"100=
+%" style=3D"border:0;background-color:transparent;border-radius:0;border-co=
+llapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-right:24=
+px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlockContainer"><d=
+iv data-block-id=3D"223" class=3D"mceText" id=3D"d223" style=3D"width:100%"=
+><p style=3D"line-height: 1.25; mso-line-height-alt: 125%; text-align: just=
+ify;" class=3D"last-child"><strong><span style=3D"color:#c41c16;"><span sty=
+le=3D"font-size: 18px">1. B=C3=A1o c=C3=A1o ph=C3=A2n t=C3=ADch m=E1=BB=9Bi=
+</span></span></strong></p></div></td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding=
+-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"=
+gutterContainerId-467"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"=
+><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;pad=
+ding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b467"><table wid=
+th=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;=
+border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding=
+-right:24px;padding-top:6px;padding-bottom:6px" class=3D"mceTextBlockContai=
+ner"><div data-block-id=3D"467" class=3D"mceText" id=3D"d467" style=3D"widt=
+h:100%"><p style=3D"line-height: 1.5; mso-line-height-alt: 150%; text-align=
+: left;" class=3D"last-child"><a href=3D"https://y1ghrnzq.r.ap-southeast-1.=
+awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fwp-content%2Fuploads%2F2026%2F=
+11%2F20261126_Thue_Muc_301_My_35_phan_tram_voi_Viet_Nam.pdf%3Futm_source=3D=
+email%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Dbcpt-vn-My-de-xua=
+t-thue-Muc-301-toi-da-35-voi-hang-hoa-Viet-Nam-nhom-xuat-khau-nao-chiu-tac-=
+dong%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de744=
+6e43707-000000/nkr2YXhNePrH_y2El01uhOxXd4o=3D258" target=3D"_blank"><strong=
+><span style=3D"font-size: 18px">M=E1=BB=B9 =C4=91=E1=BB=81 xu=E1=BA=A5t th=
+u=E1=BA=BF M=E1=BB=A5c 301 t=E1=BB=91i =C4=91a 35% v=E1=BB=9Bi h=C3=A0ng h=
+=C3=B3a Vi=E1=BB=87t Nam: nh=C3=B3m xu=E1=BA=A5t kh=E1=BA=A9u n=C3=A0o ch=
+=E1=BB=8Bu t=C3=A1c =C4=91=E1=BB=99ng?</span></strong></a></p></div></td></=
+tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style=3D"pad=
+ding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"top" =
+class=3D"mceGutterContainer" id=3D"gutterContainerId-488"><table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-colla=
+pse:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;p=
+adding-bottom:0;padding-right:0;padding-left:0;border:0;border-radius:0" va=
+lign=3D"top" id=3D"b488"><table width=3D"100%" style=3D"border:0;background=
+-color:transparent;border-radius:0;border-collapse:separate"><tbody><tr><td=
+ style=3D"padding-left:24px;padding-right:24px;padding-top:6px;padding-bott=
+om:6px" class=3D"mceTextBlockContainer"><div data-block-id=3D"488" class=3D=
+"mceText" id=3D"d488" style=3D"width:100%"><p style=3D"line-height: 1.5; ms=
+o-line-height-alt: 150%; text-align: left;" class=3D"last-child"><a href=3D=
+"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.=
+vn%2Fwp-content%2Fuploads%2F2026%2F11%2F20261126_ACV_Bao_cao_cap_nhat_KQKD_=
+Q3_2026.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_=
+content=3Dbcpt-vn-ACV-Cap-nhat-KQKD-Q3-2026%26utm_medium=3Dall-kh/1/010e01a=
+217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/_rl2v1kUpHc5gyPJToue4=
+SFbsrI=3D258" target=3D"_blank"><strong><span style=3D"font-size: 18px">ACV=
+ - C=E1=BA=ADp nh=E1=BA=ADt KQKD Q3/2026</span></strong></a></p></div></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style=3D"p=
+adding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"top=
+" class=3D"mceGutterContainer" id=3D"gutterContainerId-486"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top=
+:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;border-radius:0=
+" valign=3D"top" id=3D"b486"><table width=3D"100%" style=3D"border:0;backgr=
+ound-color:transparent;border-radius:0;border-collapse:separate"><tbody><tr=
+><td style=3D"padding-left:24px;padding-right:24px;padding-top:6px;padding-=
+bottom:6px" class=3D"mceTextBlockContainer"><div data-block-id=3D"486" clas=
+s=3D"mceText" id=3D"d486" style=3D"width:100%"><p style=3D"line-height: 1.5=
+; mso-line-height-alt: 150%; text-align: left;" class=3D"last-child"><a hre=
+f=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.=
+com.vn%2Fwp-content%2Fuploads%2F2026%2F11%2F20261126_VNM_Bao_cao_cap_nhat_K=
+QKD_Q3_2026.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26=
+utm_content=3Dbcpt-vn-VNM-Cap-nhat-KQKD-Q3-2026%26utm_medium=3Dall-kh/1/010=
+e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/iE7IZWkR-fnaIRYhd=
+ZlDGAjLUvg=3D258" target=3D"_blank"><strong><span style=3D"font-size: 18px"=
+>VNM - C=E1=BA=ADp nh=E1=BA=ADt KQKD Q3/2026</span></strong></a></p></div><=
+/td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style=
+=3D"background-color:transparent;padding-top:6px;padding-bottom:6px;padding=
+-right:24px;padding-left:24px;border:0;border-radius:0" valign=3D"top" clas=
+s=3D"mceDividerBlockContainer" id=3D"b335"><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"backgrou=
+nd-color:transparent;width:100%" role=3D"presentation" class=3D"mceDividerC=
+ontainer" data-block-id=3D"335"><tbody><tr><td style=3D"min-width:100%;bord=
+er-top-width:1px;border-top-style:dashed;border-top-color:#D8D8D8;line-heig=
+ht:0;font-size:0" valign=3D"top" class=3D"mceDividerBlock"> </td></tr></tbo=
+dy></table></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;paddin=
+g-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D=
+"gutterContainerId-298"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentati=
+on"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;=
+padding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b298"><table =
+width=3D"100%" style=3D"border:0;background-color:transparent;border-radius=
+:0;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padd=
+ing-right:24px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlockC=
+ontainer"><div data-block-id=3D"298" class=3D"mceText" id=3D"d298" style=3D=
+"width:100%"><p class=3D"last-child" style=3D"text-align: center;"><a href=
+=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.c=
+om.vn%2Fthong-tin%2Fbao-cao-phan-tich%2F/1/010e01a217d08e95-58910eb6-24f3-4=
+dfa-a57b-de7446e43707-000000/mUOlMdQ9SvYAY2WWSmRbkgHcNB4=3D258" target=3D"_=
+blank" style=3D"color: #c41c16;"><strong style=3D"color: #c41c16;"><span st=
+yle=3D"text-decoration:underline; color: #c41c16;"><span style=3D"font-size=
+: 18px"><span style=3D"background-color: transparent">Xem to=C3=A0n b=E1=BB=
+=99 b=C3=A1o c=C3=A1o</span></span></span></strong></a></p></div></td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr><tr><td style=3D"backgr=
+ound-color:transparent;padding-top:6px;padding-bottom:6px;padding-right:24p=
+x;padding-left:24px;border:0;border-radius:0" valign=3D"top" class=3D"mceDi=
+viderBlockContainer" id=3D"b336"><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"background-color:tra=
+nsparent;width:100%" role=3D"presentation" class=3D"mceDividerContainer" da=
+ta-block-id=3D"336"><tbody><tr><td style=3D"min-width:100%;border-top-width=
+:1px;border-top-style:solid;border-top-color:#BDBDBD;line-height:0;font-siz=
+e:0" valign=3D"top" class=3D"mceDividerBlock"> </td></tr></tbody></table></=
+td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;pad=
+ding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterContai=
+nerId-259"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody><tr>=
+<td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;=
+border:0;border-radius:0" valign=3D"top" id=3D"b259"><table width=3D"100%" =
+style=3D"border:0;background-color:transparent;border-radius:0;border-colla=
+pse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-right:24px;=
+padding-top:6px;padding-bottom:6px" class=3D"mceTextBlockContainer"><div da=
+ta-block-id=3D"259" class=3D"mceText" id=3D"d259" style=3D"width:100%"><p s=
+tyle=3D"text-align: justify;" class=3D"last-child"><strong><span style=3D"c=
+olor:#c41c16;"><span style=3D"font-size: 18px">2. C=E1=BA=ADp nh=E1=BA=ADt =
+tin t=E1=BB=A9c th=E1=BB=8B tr=C6=B0=E1=BB=9Dng</span></span></strong></p><=
+/div></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td =
+style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" val=
+ign=3D"top" class=3D"mceGutterContainer" id=3D"gutterContainerId-296"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"=
+border-collapse:separate" role=3D"presentation"><tbody><tr><td style=3D"pad=
+ding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;border-=
+radius:0" valign=3D"top" id=3D"b296"><table width=3D"100%" style=3D"border:=
+0;background-color:transparent;border-radius:0;border-collapse:separate"><t=
+body><tr><td style=3D"padding-left:24px;padding-right:24px;padding-top:6px;=
+padding-bottom:6px" class=3D"mceTextBlockContainer"><div data-block-id=3D"2=
+96" class=3D"mceText" id=3D"d296" style=3D"width:100%"><p style=3D"line-hei=
+ght: 1.5; mso-line-height-alt: 150%; text-align: justify;"><strong><span st=
+yle=3D"color:rgb(26, 26, 26);">Th=E1=BB=8B tr=C6=B0=E1=BB=9Dng chung</span>=
+</strong></p><ul><li style=3D"line-height: 1.5; mso-line-height-alt: 150%; =
+text-align: justify;"><p style=3D"margin-bottom: 8.0pt; line-height: 1.5; m=
+so-line-height-alt: 150%; text-align: justify;"><strong>VN-Index:</strong> =
+Gi=E1=BA=A3m 3,42% (=E2=88=9257,77 =C4=91i=E1=BB=83m), =C4=91=C3=B3ng c=E1=
+=BB=ADa t=E1=BA=A1i 1.629,68 =C4=91i=E1=BB=83m, ghi nh=E1=BA=ADn phi=C3=AAn=
+ gi=E1=BA=A3m m=E1=BA=A1nh nh=E1=BA=A5t k=E1=BB=83 t=E1=BB=AB ng=C3=A0y 22/=
+7 v=C3=A0 l=C3=B9i v=E1=BB=81 m=E1=BB=A9c =C4=91=C3=B3ng c=E1=BB=ADa th=E1=
+=BA=A5p nh=E1=BA=A5t k=E1=BB=83 t=E1=BB=AB ng=C3=A0y 24/3, trong phi=C3=AAn=
+ giao d=E1=BB=8Bch =C4=91=E1=BA=A7u ti=C3=AAn sau khi V=C4=83n ph=C3=B2ng =
+=C4=90=E1=BA=A1i di=E1=BB=87n Th=C6=B0=C6=A1ng m=E1=BA=A1i Hoa K=E1=BB=B3 (=
+USTR) c=C3=B4ng b=E1=BB=91 =C4=91=E1=BB=81 xu=E1=BA=A5t =C3=A1p thu=E1=BA=
+=BF =C4=91=E1=BB=91i v=E1=BB=9Bi h=C3=A0ng h=C3=B3a Vi=E1=BB=87t Nam. Ch=E1=
+=BB=89 s=E1=BB=91 m=E1=BB=9F c=E1=BB=ADa d=C6=B0=E1=BB=9Bi tham chi=E1=BA=
+=BFu v=C3=A0 giao d=E1=BB=8Bch trong v=C3=B9ng gi=C3=A1 th=E1=BA=A5p h=C6=
+=A1n tham chi=E1=BA=BFu su=E1=BB=91t phi=C3=AAn s=C3=A1ng; sang phi=C3=AAn =
+chi=E1=BB=81u, =C3=A1p l=E1=BB=B1c b=C3=A1n gia t=C4=83ng m=E1=BA=A1nh v=C3=
+=A0 lan r=E1=BB=99ng, khi=E1=BA=BFn ch=E1=BB=89 s=E1=BB=91 =C4=91=C3=A1nh m=
+=E1=BA=A5t ng=C6=B0=E1=BB=A1ng t=C3=A2m l=C3=BD 1.650 =C4=91i=E1=BB=83m v=
+=C3=A0 =C4=91=C3=B3ng c=E1=BB=ADa g=E1=BA=A7n v=C3=B9ng th=E1=BA=A5p nh=E1=
+=BA=A5t trong ng=C3=A0y. Di=E1=BB=85n bi=E1=BA=BFn k=C3=A9m t=C3=ADch c=E1=
+=BB=B1c bao tr=C3=B9m khi t=E1=BA=A5t c=E1=BA=A3 c=C3=A1c nh=C3=B3m ng=C3=
+=A0nh =C4=91=E1=BB=81u gi=E1=BA=A3m gi=C3=A1, trong =C4=91=C3=B3 nh=C3=B3m =
+c=E1=BB=95 phi=E1=BA=BFu thu=E1=BB=99c h=E1=BB=87 sinh th=C3=A1i Vingroup g=
+i=E1=BA=A3m =C4=91=E1=BB=93ng lo=E1=BA=A1t, c=E1=BB=99ng h=C6=B0=E1=BB=9Fng=
+ c=C3=B9ng =C3=A1p l=E1=BB=B1c b=C3=A1n t=E1=BA=A1i ph=E1=BA=A7n l=E1=BB=9B=
+n c=E1=BB=95 phi=E1=BA=BFu Ng=C3=A2n h=C3=A0ng, B=E1=BA=A5t =C4=91=E1=BB=99=
+ng s=E1=BA=A3n, Ch=E1=BB=A9ng kho=C3=A1n v=C3=A0 V=E1=BA=ADn t=E1=BA=A3i - =
+C=E1=BA=A3ng bi=E1=BB=83n, t=E1=BA=A1o s=E1=BB=A9c =C3=A9p =C4=91=C3=A1ng k=
+=E1=BB=83 l=C3=AAn ch=E1=BB=89 s=E1=BB=91. =E1=BB=9E chi=E1=BB=81u ng=C6=B0=
+=E1=BB=A3c l=E1=BA=A1i, =C4=91=C3=A0 t=C4=83ng gi=C3=A1 t=E1=BA=A1i m=E1=BB=
+=99t s=E1=BB=91 =C3=ADt m=C3=A3 thu=E1=BB=99c nh=C3=B3m Ti=C3=AAu d=C3=B9ng=
+ ch=E1=BB=89 gi=C3=BAp h=E1=BA=A1n ch=E1=BA=BF ph=E1=BA=A7n n=C3=A0o =C4=91=
+=C3=A0 gi=E1=BA=A3m c=E1=BB=A7a ch=E1=BB=89 s=E1=BB=91.</p></li><li style=
+=3D"line-height: 1.5; mso-line-height-alt: 150%; text-align: justify;"><p s=
+tyle=3D"margin-bottom: 8.0pt; line-height: 1.5; mso-line-height-alt: 150%; =
+text-align: justify;"><strong>Thanh kho=E1=BA=A3n:</strong> C=E1=BA=A3i thi=
+=E1=BB=87n m=E1=BA=A1nh so v=E1=BB=9Bi phi=C3=AAn tr=C6=B0=E1=BB=9Bc khi gi=
+=C3=A1 tr=E1=BB=8B kh=E1=BB=9Bp l=E1=BB=87nh tr=C3=AAn HoSE =C4=91=E1=BA=A1=
+t 13.479,0 t=E1=BB=B7 =C4=91=E1=BB=93ng (691,6 tri=E1=BB=87u c=E1=BB=95 phi=
+=E1=BA=BFu), t=C4=83ng 59,6% v=C3=A0 cao h=C6=A1n 14,4% so v=E1=BB=9Bi b=C3=
+=ACnh qu=C3=A2n 30 phi=C3=AAn. T=E1=BB=95ng gi=C3=A1 tr=E1=BB=8B giao d=E1=
+=BB=8Bch =C4=91=E1=BA=A1t 16.043,7 t=E1=BB=B7 =C4=91=E1=BB=93ng, trong =C4=
+=91=C3=B3 giao d=E1=BB=8Bch th=E1=BB=8Fa thu=E1=BA=ADn =C4=91=C3=B3ng g=C3=
+=B3p 2.564,6 t=E1=BB=B7 =C4=91=E1=BB=93ng.</p></li><li style=3D"line-height=
+: 1.5; mso-line-height-alt: 150%; text-align: justify;"><p style=3D"margin-=
+bottom: 8.0pt; line-height: 1.5; mso-line-height-alt: 150%; text-align: jus=
+tify;"><strong>Kh=E1=BB=91i ngo=E1=BA=A1i:</strong> B=C3=A1n r=C3=B2ng phi=
+=C3=AAn th=E1=BB=A9 b=E1=BA=A3y li=C3=AAn ti=E1=BA=BFp v=E1=BB=9Bi gi=C3=A1=
+ tr=E1=BB=8B 186,9 t=E1=BB=B7 =C4=91=E1=BB=93ng tr=C3=AAn HoSE, t=E1=BA=ADp=
+ trung t=E1=BA=A1i <a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me=
+/L0/https:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2FVIC.pdf%3Futm_source=3Demai=
+l%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Drp-vn-1click-VIC-2611=
+%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43=
+707-000000/qvn_G9tjrSV8LeJnr5SnUBuyoY0=3D258"><strong>VIC</strong></a>, <a =
+href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic=
+.tcbs.com.vn%2Foneclick%2FTCB.pdf%3Futm_source=3Demail%26utm_campaign=3D701=
+GA000001PwiRYAS%26utm_content=3Drp-vn-1click-TCB-2611%26utm_medium=3Dall-kh=
+/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/Xoo1pOjdwz9=
+ycXKzaZwM2ag2Nfo=3D258"><strong>TCB</strong></a> v=C3=A0 <a href=3D"https:/=
+/y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2F=
+oneclick%2FVPL.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS=
+%26utm_content=3Drp-vn-1click-VPL-2611%26utm_medium=3Dall-kh/1/010e01a217d0=
+8e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/MRLyvWl6x2ezTkh6IBOaO-hqnr=
+c=3D258"><strong>VPL</strong></a>. =E1=BB=9E chi=E1=BB=81u ng=C6=B0=E1=BB=
+=A3c l=E1=BA=A1i, d=C3=B2ng ti=E1=BB=81n mua r=C3=B2ng t=E1=BA=ADp trung v=
+=C3=A0o <a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%=
+2F%2Fstatic.tcbs.com.vn%2Foneclick%2FCTD.pdf%3Futm_source=3Demail%26utm_cam=
+paign=3D701GA000001PwiRYAS%26utm_content=3Drp-vn-1click-CTD-2611%26utm_medi=
+um=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/=
+pShs3eZTFTmigjlW5DWMbsjK-yQ=3D258"><strong>CTD</strong></a>, <a href=3D"htt=
+ps://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.v=
+n%2Foneclick%2FVNM.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001Pwi=
+RYAS%26utm_content=3Drp-vn-1click-VNM-2611%26utm_medium=3Dall-kh/1/010e01a2=
+17d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/jc67QzAII9twB_QHDn9R6Y=
+9-IIU=3D258"><strong>VNM</strong></a> v=C3=A0 <a href=3D"https://y1ghrnzq.r=
+.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2F=
+VPI.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_cont=
+ent=3Drp-vn-1click-VPI-2611%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910e=
+b6-24f3-4dfa-a57b-de7446e43707-000000/myjvAiPYFTTgAD1VFn8ramcgGSY=3D258"><s=
+trong>VPI</strong></a>. L=C5=A9y k=E1=BA=BF t=E1=BB=AB =C4=91=E1=BA=A7u n=
+=C4=83m, kh=E1=BB=91i ngo=E1=BA=A1i b=C3=A1n r=C3=B2ng 133.200,1 t=E1=BB=B7=
+ =C4=91=E1=BB=93ng tr=C3=AAn HoSE.</p></li><li style=3D"line-height: 1.5; m=
+so-line-height-alt: 150%; text-align: justify;"><p style=3D"margin-bottom: =
+8.0pt; line-height: 1.5; mso-line-height-alt: 150%; text-align: justify;"><=
+strong>K=E1=BB=B9 thu=E1=BA=ADt:</strong> Ch=E1=BB=89 s=E1=BB=91 =C4=91=C3=
+=B3ng c=E1=BB=ADa d=C6=B0=E1=BB=9Bi c=E1=BA=A3 b=E1=BB=91n =C4=91=C6=B0=E1=
+=BB=9Dng trung b=C3=ACnh =C4=91=E1=BB=99ng, g=E1=BB=93m MA5 quanh 1.679 =C4=
+=91i=E1=BB=83m, MA10 quanh 1.703 =C4=91i=E1=BB=83m, MA20 quanh 1.717 =C4=91=
+i=E1=BB=83m v=C3=A0 MA50 quanh 1.740 =C4=91i=E1=BB=83m, =C4=91=E1=BB=93ng t=
+h=E1=BB=9Di n=E1=BA=B1m d=C6=B0=E1=BB=9Bi MA50 phi=C3=AAn th=E1=BB=A9 23 li=
+=C3=AAn ti=E1=BA=BFp. Sau khi =C4=91=E1=BB=83 m=E1=BA=A5t v=C3=B9ng =C4=91=
+=C3=A1y c=C3=A1c phi=C3=AAn 20/11 v=C3=A0 23/11 quanh 1.666 - 1.672 =C4=91i=
+=E1=BB=83m, v=C3=B9ng n=C3=A0y tr=E1=BB=9F th=C3=A0nh kh=C3=A1ng c=E1=BB=B1=
+ tr=C6=B0=E1=BB=9Bc m=E1=BA=AFt, trong khi v=C3=B9ng =C4=91=C3=A1y cu=E1=BB=
+=91i th=C3=A1ng 3 quanh 1.591 - 1.615 =C4=91i=E1=BB=83m, n=C6=A1i c=C3=B3 n=
+g=C6=B0=E1=BB=A1ng t=C3=A2m l=C3=BD 1.600 =C4=91i=E1=BB=83m, l=C3=A0 h=E1=
+=BB=97 tr=E1=BB=A3 g=E1=BA=A7n nh=E1=BA=A5t.</p></li></ul><p style=3D"line-=
+height: 1; mso-line-height-alt: 100%; text-align: justify;"><br/></p><p sty=
+le=3D"line-height: 1.5; mso-line-height-alt: 150%; text-align: justify;"><s=
+trong><span style=3D"color:rgb(26, 26, 26);">V=C4=A9 m=C3=B4</span></strong=
+></p><ul><li style=3D"line-height: 1.5; mso-line-height-alt: 150%; text-ali=
+gn: justify;"><p style=3D"margin-bottom: 8.0pt; line-height: 1.5; mso-line-=
+height-alt: 150%; text-align: justify;"><strong>Trong n=C6=B0=E1=BB=9Bc:</s=
+trong> V=E1=BB=81 t=E1=BB=B7 gi=C3=A1, t=E1=BB=B7 gi=C3=A1 trung t=C3=A2m n=
+g=C3=A0y 26/11 =C4=91=C6=B0=E1=BB=A3c NHNN ni=C3=AAm y=E1=BA=BFt =E1=BB=9F =
+m=E1=BB=A9c 25.676 =C4=91=E1=BB=93ng/USD, gi=E1=BA=A3m 3 =C4=91=E1=BB=93ng =
+so v=E1=BB=9Bi phi=C3=AAn tr=C6=B0=E1=BB=9Bc. V=E1=BB=81 gi=C3=A1 x=C4=83ng=
+ d=E1=BA=A7u, li=C3=AAn B=E1=BB=99 C=C3=B4ng Th=C6=B0=C6=A1ng - T=C3=A0i ch=
+=C3=ADnh =C4=91i=E1=BB=81u ch=E1=BB=89nh gi=E1=BA=A3m gi=C3=A1 b=C3=A1n l=
+=E1=BA=BB t=E1=BB=AB 15h ng=C3=A0y 26/11, v=E1=BB=9Bi x=C4=83ng E5RON92 gi=
+=E1=BA=A3m 185 =C4=91=E1=BB=93ng/l=C3=ADt xu=E1=BB=91ng 18.391 =C4=91=E1=BB=
+=93ng/l=C3=ADt, x=C4=83ng E10RON95-III gi=E1=BA=A3m 44 =C4=91=E1=BB=93ng/l=
+=C3=ADt xu=E1=BB=91ng 19.056 =C4=91=E1=BB=93ng/l=C3=ADt v=C3=A0 d=E1=BA=A7u=
+ diesel gi=E1=BA=A3m 1.382 =C4=91=E1=BB=93ng/l=C3=ADt xu=E1=BB=91ng 24.965 =
+=C4=91=E1=BB=93ng/l=C3=ADt.</p></li><li style=3D"line-height: 1.5; mso-line=
+-height-alt: 150%; text-align: justify;"><p style=3D"margin-bottom: 8.0pt; =
+line-height: 1.5; mso-line-height-alt: 150%; text-align: justify;"><strong>=
+Qu=E1=BB=91c t=E1=BA=BF:</strong> V=E1=BB=81 th=C6=B0=C6=A1ng m=E1=BA=A1i, =
+USTR c=C3=B4ng b=E1=BB=91 k=E1=BA=BFt lu=E1=BA=ADn s=C6=A1 b=E1=BB=99 trong=
+ 14 cu=E1=BB=99c =C4=91i=E1=BB=81u tra theo M=E1=BB=A5c 301 li=C3=AAn quan =
+=C4=91=E1=BA=BFn t=C3=ACnh tr=E1=BA=A1ng d=C6=B0 th=E1=BB=ABa c=C3=B4ng su=
+=E1=BA=A5t s=E1=BA=A3n xu=E1=BA=A5t, trong =C4=91=C3=B3 =C4=91=E1=BB=81 xu=
+=E1=BA=A5t =C3=A1p thu=E1=BA=BF t=E1=BB=91i =C4=91a 35% =C4=91=E1=BB=91i v=
+=E1=BB=9Bi h=C3=A0ng h=C3=B3a nh=E1=BA=ADp kh=E1=BA=A9u t=E1=BB=AB Vi=E1=BB=
+=87t Nam (c=C3=B3 lo=E1=BA=A1i tr=E1=BB=AB m=E1=BB=99t s=E1=BB=91 m=E1=BA=
+=B7t h=C3=A0ng), c=C3=B3 th=E1=BB=83 =C4=91i=E1=BB=81u ch=E1=BB=89nh v=E1=
+=BB=81 20% n=E1=BA=BFu hai b=C3=AAn =C4=91=E1=BA=A1t Th=E1=BB=8Fa thu=E1=BA=
+=ADn Th=C6=B0=C6=A1ng m=E1=BA=A1i =C4=91=E1=BB=91i =E1=BB=A9ng. Th=E1=BB=9D=
+i h=E1=BA=A1n g=E1=BB=ADi =C3=BD ki=E1=BA=BFn l=C3=A0 ng=C3=A0y 5/1/2027 v=
+=C3=A0 phi=C3=AAn =C4=91i=E1=BB=81u tr=E1=BA=A7n d=E1=BB=B1 ki=E1=BA=BFn b=
+=E1=BA=AFt =C4=91=E1=BA=A7u t=E1=BB=AB ng=C3=A0y 25/1/2027; B=E1=BB=99 C=C3=
+=B4ng Th=C6=B0=C6=A1ng cho bi=E1=BA=BFt =C4=91=C3=A2y m=E1=BB=9Bi ch=E1=BB=
+=89 l=C3=A0 =C4=91=E1=BB=81 xu=E1=BA=A5t, ch=C6=B0a c=C3=B3 hi=E1=BB=87u l=
+=E1=BB=B1c v=C3=A0 ch=C6=B0a =C4=91=C6=B0=E1=BB=A3c =C3=A1p d=E1=BB=A5ng ch=
+=C3=ADnh th=E1=BB=A9c. Tr=C3=AAn th=E1=BB=8B tr=C6=B0=E1=BB=9Dng ch=E1=BB=
+=A9ng kho=C3=A1n M=E1=BB=B9, phi=C3=AAn 25/11 di=E1=BB=85n bi=E1=BA=BFn tr=
+=C3=A1i chi=E1=BB=81u v=E1=BB=9Bi Dow Jones +0,33% l=C3=AAn 50.182,95 =C4=
+=91i=E1=BB=83m, trong khi S&amp;P 500 =E2=88=920,25% xu=E1=BB=91ng 7.182,78=
+ =C4=91i=E1=BB=83m v=C3=A0 Nasdaq =E2=88=920,62% xu=E1=BB=91ng 23.585,80 =
+=C4=91i=E1=BB=83m; th=E1=BB=8B tr=C6=B0=E1=BB=9Dng M=E1=BB=B9 ngh=E1=BB=89 =
+giao d=E1=BB=8Bch ng=C3=A0y 26/11 nh=C3=A2n L=E1=BB=85 T=E1=BA=A1 =C6=A1n.<=
+/p></li></ul><p style=3D"line-height: 1; mso-line-height-alt: 100%; text-al=
+ign: justify;"><br/></p><p style=3D"line-height: 1.5; mso-line-height-alt: =
+150%; text-align: justify;"><strong><span style=3D"color:rgb(26, 26, 26);">=
+Tin doanh nghi=E1=BB=87p</span></strong></p><ul class=3D"last-child"><li st=
+yle=3D"line-height: 1.5; mso-line-height-alt: 150%; text-align: justify;"><=
+p style=3D"margin-bottom: 8.0pt; line-height: 1.5; mso-line-height-alt: 150=
+%; text-align: justify;"><a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstr=
+ack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2FMSN.pdf%3Futm_source=
+=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Drp-vn-1click-M=
+SN-2611%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de=
+7446e43707-000000/iLVtTF6hMZqkWVrXol8tcCQvBp0=3D258"><strong>MSN</strong></=
+a><strong>:</strong> CTCP T=E1=BA=ADp =C4=91o=C3=A0n Masan c=C3=B4ng b=E1=
+=BB=91 t=C3=A0i li=E1=BB=87u l=E1=BA=A5y =C3=BD ki=E1=BA=BFn c=E1=BB=95 =C4=
+=91=C3=B4ng b=E1=BA=B1ng v=C4=83n b=E1=BA=A3n v=E1=BB=81 vi=E1=BB=87c =C4=
+=91i=E1=BB=81u ch=E1=BB=89nh k=E1=BA=BF ho=E1=BA=A1ch kinh doanh n=C4=83m 2=
+026, n=C3=A2ng m=E1=BB=A5c ti=C3=AAu doanh thu thu=E1=BA=A7n l=C3=AAn 98.00=
+0 - 105.000 t=E1=BB=B7 =C4=91=E1=BB=93ng v=C3=A0 l=E1=BB=A3i nhu=E1=BA=ADn =
+sau thu=E1=BA=BF h=E1=BB=A3p nh=E1=BA=A5t l=C3=AAn 10.000 - 11.500 t=E1=BB=
+=B7 =C4=91=E1=BB=93ng, t=E1=BB=AB m=E1=BB=A9c 93.500 - 98.000 t=E1=BB=B7 =
+=C4=91=E1=BB=93ng v=C3=A0 7.250 - 7.900 t=E1=BB=B7 =C4=91=E1=BB=93ng =C4=91=
+=C6=B0=E1=BB=A3c =C4=90H=C4=90C=C4=90 th=C6=B0=E1=BB=9Dng ni=C3=AAn th=C3=
+=B4ng qua. C=C3=B9ng =C4=91=E1=BB=A3t, H=C4=90QT tr=C3=ACnh gi=E1=BA=A3m s=
+=E1=BB=91 th=C3=A0nh vi=C3=AAn H=C4=90QT t=E1=BB=AB 6 xu=E1=BB=91ng 5 ng=C6=
+=B0=E1=BB=9Di cho th=E1=BB=9Di gian c=C3=B2n l=E1=BA=A1i c=E1=BB=A7a nhi=E1=
+=BB=87m k=E1=BB=B3 2024 - 2029; th=E1=BB=9Di h=E1=BA=A1n g=E1=BB=ADi phi=E1=
+=BA=BFu bi=E1=BB=83u quy=E1=BA=BFt l=C3=A0 tr=C6=B0=E1=BB=9Bc 17h ng=C3=A0y=
+ 7/12.</p></li></ul></div></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:=
+0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterC=
+ontainerId-314"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody=
+><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-le=
+ft:0;border:0;border-radius:0" valign=3D"top" id=3D"b314"><table width=3D"1=
+00%" style=3D"border:0;background-color:transparent;border-radius:0;border-=
+collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-right:=
+24px;padding-top:6px;padding-bottom:6px" class=3D"mceTextBlockContainer"><d=
+iv data-block-id=3D"314" class=3D"mceText" id=3D"d314" style=3D"width:100%"=
+><p style=3D"line-height: 1.25; mso-line-height-alt: 125%; text-align: just=
+ify;" class=3D"last-child"><strong><span style=3D"color:#c41c16;"><span sty=
+le=3D"font-size: 18px">3. Khuy=E1=BA=BFn ngh=E1=BB=8B c=E1=BB=95 phi=E1=BA=
+=BFu</span></span></strong></p></div></td></tr></tbody></table></td></tr></=
+tbody></table></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;pad=
+ding-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=
+=3D"gutterContainerId-315"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentat=
+ion"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0=
+;padding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b315"><table=
+ width=3D"100%" style=3D"border:0;background-color:transparent;border-radiu=
+s:0;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;pad=
+ding-right:24px;padding-top:0;padding-bottom:6px" class=3D"mceTextBlockCont=
+ainer"><div data-block-id=3D"315" class=3D"mceText" id=3D"d315" style=3D"wi=
+dth:100%"><ul class=3D"last-child"><li style=3D"text-align: justify;"><p st=
+yle=3D"margin-bottom: 8.0pt; text-align: justify;"><a href=3D"https://y1ghr=
+nzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Fonecli=
+ck%2FGMD.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm=
+_content=3Drp-vn-1click-GMD-2611%26utm_medium=3Dall-kh/1/010e01a217d08e95-5=
+8910eb6-24f3-4dfa-a57b-de7446e43707-000000/LqedMBMhE3BZGJYx5BkHf78P4Uk=3D25=
+8" target=3D"_blank"><strong>GMD</strong></a><span style=3D"font-size: 18px=
+"> - </span><strong><span style=3D"font-size: 18px">N=E1=BA=AFm gi=E1=BB=AF=
+</span></strong><span style=3D"font-size: 18px"> - Th=C3=A1ng 10/2026, s=E1=
+=BA=A3n l=C6=B0=E1=BB=A3ng container th=C3=B4ng qua h=E1=BB=87 th=E1=BB=91n=
+g c=E1=BA=A3ng bi=E1=BB=83n Vi=E1=BB=87t Nam =C4=91=E1=BA=A1t 2,70 tri=E1=
+=BB=87u TEU (+8,4% YoY), trong =C4=91=C3=B3 hai c=E1=BB=A5m c=E1=BA=A3ng n=
+=C6=B0=E1=BB=9Bc s=C3=A2u C=C3=A1i M=C3=A9p =E2=80=93 Th=E1=BB=8B V=E1=BA=
+=A3i v=C3=A0 L=E1=BA=A1ch Huy=E1=BB=87n chi=E1=BA=BFm 40% t=E1=BB=95ng s=E1=
+=BA=A3n l=C6=B0=E1=BB=A3ng v=C3=A0 =C4=91=C3=B3ng g=C3=B3p kho=E1=BA=A3ng 7=
+5% m=E1=BB=A9c t=C4=83ng tr=C6=B0=E1=BB=9Fng. Ch=C3=BAng t=C3=B4i =C4=91=C3=
+=A1nh gi=C3=A1 GMD h=C6=B0=E1=BB=9Fng l=E1=BB=A3i tr=E1=BB=B1c ti=E1=BA=BFp=
+ t=E1=BB=AB xu h=C6=B0=E1=BB=9Bng n=C3=A0y nh=E1=BB=9D v=E1=BB=8B th=E1=BA=
+=BF d=E1=BA=ABn =C4=91=E1=BA=A7u c=E1=BB=A7a Gemalink t=E1=BA=A1i C=C3=A1i =
+M=C3=A9p, c=E1=BA=A3ng =C4=91=C3=B3ng g=C3=B3p ch=E1=BB=A7 =C4=91=E1=BA=A1o=
+ v=C3=A0o l=E1=BB=A3i nhu=E1=BA=ADn li=C3=AAn doanh, li=C3=AAn k=E1=BA=BFt.=
+ Gemalink giai =C4=91o=E1=BA=A1n 2A khi ho=C3=A0n th=C3=A0nh s=E1=BA=BD n=
+=C3=A2ng c=C3=B4ng su=E1=BA=A5t v=C3=A0 n=C4=83ng l=E1=BB=B1c ti=E1=BA=BFp =
+nh=E1=BA=ADn t=C3=A0u l=E1=BB=9Bn, t=E1=BA=A1o d=C6=B0 =C4=91=E1=BB=8Ba t=
+=C4=83ng tr=C6=B0=E1=BB=9Fng d=C3=A0i h=E1=BA=A1n. =C4=90=E1=BB=91i v=E1=BB=
+=9Bi =C4=91=E1=BB=81 xu=E1=BA=A5t =C3=A1p thu=E1=BA=BF b=E1=BB=95 sung theo=
+ M=E1=BB=A5c 301 c=E1=BB=A7a M=E1=BB=B9 ng=C3=A0y 25/11, =C4=91=C3=A2y m=E1=
+=BB=9Bi l=C3=A0 k=E1=BA=BFt lu=E1=BA=ADn s=C6=A1 b=E1=BB=99, ch=C6=B0a c=C3=
+=B3 hi=E1=BB=87u l=E1=BB=B1c; quy=E1=BA=BFt =C4=91=E1=BB=8Bnh cu=E1=BB=91i =
+c=C3=B9ng d=E1=BB=B1 ki=E1=BA=BFn =C4=91=C6=B0=E1=BB=A3c =C4=91=C6=B0a ra s=
+=E1=BB=9Bm nh=E1=BA=A5t trong th=C3=A1ng 02/2027 v=C3=A0 mu=E1=BB=99n nh=E1=
+=BA=A5t ng=C3=A0y 11/03/2027. M=E1=BB=A9c thu=E1=BA=BF t=E1=BB=91i =C4=91a =
+35% c=C3=B3 th=E1=BB=83 gi=E1=BA=A3m xu=E1=BB=91ng 20% n=E1=BA=BFu Vi=E1=BB=
+=87t Nam v=C3=A0 M=E1=BB=B9 =C4=91=E1=BA=A1t hi=E1=BB=87p =C4=91=E1=BB=8Bnh=
+ th=C6=B0=C6=A1ng m=E1=BA=A1i =C4=91=E1=BB=91i =E1=BB=A9ng, qua =C4=91=C3=
+=B3 h=E1=BA=A1n ch=E1=BA=BF t=C3=A1c =C4=91=E1=BB=99ng t=E1=BB=9Bi s=E1=BA=
+=A3n l=C6=B0=E1=BB=A3ng h=C3=A0ng xu=E1=BA=A5t kh=E1=BA=A9u. Do =C4=91=C3=
+=B3, nh=C3=A0 =C4=91=E1=BA=A7u t=C6=B0 c=C3=B3 th=E1=BB=83 ti=E1=BA=BFp t=
+=E1=BB=A5c n=E1=BA=AFm gi=E1=BB=AF v=C3=A0 quan s=C3=A1t th=C3=AAm v=E1=BB=
+=81 tri=E1=BB=83n v=E1=BB=8Dng v=C3=A0 ti=E1=BA=BFn tr=C3=ACnh =C4=91=C3=A0=
+m ph=C3=A1n c=E1=BB=A7a Vi=E1=BB=87t Nam v=C3=A0 M=E1=BB=B9.</span></p></li=
+></ul></div></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left=
+:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterContainerId-263=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" st=
+yle=3D"border-collapse:separate" role=3D"presentation"><tbody><tr><td style=
+=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;=
+border-radius:0" valign=3D"top" id=3D"b263"><table width=3D"100%" style=3D"=
+border:0;background-color:transparent;border-radius:0;border-collapse:separ=
+ate"><tbody><tr><td style=3D"padding-left:24px;padding-right:24px;padding-t=
+op:6px;padding-bottom:6px" class=3D"mceTextBlockContainer"><div data-block-=
+id=3D"263" class=3D"mceText" id=3D"d263" style=3D"width:100%"><p style=3D"t=
+ext-align: justify;" class=3D"last-child"><strong><span style=3D"color:#c41=
+c16;"><span style=3D"font-size: 18px">4. C=C3=A1c =C6=B0u =C4=91=C3=A3i hi=
+=E1=BB=87n c=C3=B3 c=E1=BB=A7a TCBS</span></span></strong></p></div></td></=
+tr></tbody></table></td></tr></tbody></table></td></tr><tr><td valign=3D"to=
+p" class=3D"mceGutterContainer" id=3D"gutterContainerId-283"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top=
+:6px;padding-bottom:6px;padding-right:0;padding-left:0;border:0;border-radi=
+us:0" valign=3D"top" class=3D"mceLayoutContainer" id=3D"b283"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ role=3D"presentation" data-block-id=3D"283" id=3D"section_7863d4823b536ffa=
+d3baf4bdbf53f84a" class=3D"mceLayout"><tbody><tr class=3D"mceRow"><td style=
+=3D"background-position:center;background-repeat:no-repeat;background-size:=
+cover" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" role=3D"presentation"><tbody><tr><td valign=3D"top" class=
+=3D"mceColumn" id=3D"mceColumnId--14" data-block-id=3D"-14" colspan=3D"12" =
+width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"border:0;border-ra=
+dius:0" valign=3D"top" align=3D"center" id=3D"b-5"><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"pre=
+sentation" data-block-id=3D"-5"><tbody><tr class=3D"mceRow"><td style=3D"ba=
+ckground-position:center;background-repeat:no-repeat;background-size:cover"=
+ valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" role=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mc=
+eColumn" id=3D"mceColumnId--19" data-block-id=3D"-19" colspan=3D"12" width=
+=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" role=3D"presentation"><tbody><tr><td style=3D"border:0;border-radius:=
+0" valign=3D"top" id=3D"b288"><table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block=
+-id=3D"288"><tbody><tr class=3D"mceRow"><td style=3D"background-position:ce=
+nter;background-repeat:no-repeat;background-size:cover;padding-top:0px;padd=
+ing-bottom:0px" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"24" width=3D"100%" style=3D"table-layout:fixed" role=3D"presentati=
+on"><colgroup><col span=3D"1" width=3D"8.333333333333332%"/><col span=3D"1"=
+ width=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.333333333333332%"=
+/><col span=3D"1" width=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.=
+333333333333332%"/><col span=3D"1" width=3D"8.333333333333332%"/><col span=
+=3D"1" width=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.33333333333=
+3332%"/><col span=3D"1" width=3D"8.333333333333332%"/><col span=3D"1" width=
+=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.333333333333332%"/><col=
+ span=3D"1" width=3D"8.333333333333332%"/></colgroup><tbody><tr><td style=
+=3D"padding-top:0;padding-bottom:0" valign=3D"top" class=3D"mceColumn" id=
+=3D"mceColumnId-285" data-block-id=3D"285" colspan=3D"6" width=3D"50%"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"=
+presentation"><tbody><tr><td style=3D"background-color:transparent;padding-=
+top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px;border:0;=
+border-radius:0" valign=3D"top" class=3D"mceImageBlockContainer" align=3D"c=
+enter" id=3D"b299"><div><!--[if !mso]><!--></div><a href=3D"https://y1ghrnz=
+q.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fca-nhan%2Fu=
+u-dai%2Fmo-khoa-uu-dai-margin%2F%3Futm_source=3Demail%26utm_campaign=3D701G=
+A000001PwiRYAS%26utm_content=3Dpromo-margin-0307%26utm_medium=3Dall-kh/1/01=
+0e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/vgnwQQVo9rx3G1IV=
+mg80DKw_ZaA=3D258" style=3D"display:block" target=3D"_blank" data-block-id=
+=3D"299"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse:separate;margin:0;vertical-a=
+lign:top;max-width:100%;width:100%;height:auto" role=3D"presentation" data-=
+testid=3D"image-299"><tbody><tr><td style=3D"border:0;border-radius:0;margi=
+n:0" valign=3D"top"><img alt=3D"" src=3D"https://mcusercontent.com/dacbe680=
+74cece4d07a7a37ed/images/e7666c2c-d505-2157-009e-adb9402bea8f.jpg" width=3D=
+"282" height=3D"auto" style=3D"display:block;max-width:100%;height:auto;bor=
+der-radius:0" class=3D"imageDropZone mceImage"/></td></tr></tbody></table><=
+/a><div><!--<![endif]--></div><div>
+<!--[if mso]>
+<a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww=
+.tcbs.com.vn%2Fca-nhan%2Fuu-dai%2Fmo-khoa-uu-dai-margin%2F%3Futm_source=3De=
+mail%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Dpromo-margin-0307%=
+26utm_medium=3Dall-kh/2/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e437=
+07-000000/pAeoxZ5e0mqrTanSw81_1WRdL7k=3D258"><span class=3D"mceImageBorder"=
+ style=3D"border:0;border-width:2px;vertical-align:top;margin:0"><img role=
+=3D"presentation" class=3D"imageDropZone mceImage" src=3D"https://mcusercon=
+tent.com/dacbe68074cece4d07a7a37ed/images/e7666c2c-d505-2157-009e-adb9402be=
+a8f.jpg" alt=3D"" width=3D"282" height=3D"auto" style=3D"display:block;max-=
+width:282px;width:282px;height:auto"/></span></a>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-rig=
+ht:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutt=
+erContainerId-300"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tb=
+ody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding=
+-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b300"><table width=
+=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;bo=
+rder-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-r=
+ight:24px;padding-top:0;padding-bottom:0" class=3D"mceTextBlockContainer"><=
+div data-block-id=3D"300" class=3D"mceText" id=3D"d300" style=3D"width:100%=
+"><p style=3D"text-align: center;" class=3D"last-child"><a href=3D"https://=
+y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fca-n=
+han%2Fuu-dai%2Fmo-khoa-uu-dai-margin%2F%3Futm_source=3Demail%26utm_campaign=
+=3D701GA000001PwiRYAS%26utm_content=3Dpromo-margin-0307%26utm_medium=3Dall-=
+kh/3/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/YIxmEZk8Q=
+GlEHu85wr9xWr-wVcA=3D258" target=3D"_blank" style=3D"color: #c41c16; text-d=
+ecoration: none;"><strong><span style=3D"font-size: 18px"><span style=3D"fo=
+nt-family: Arial, 'Helvetica Neue', Helvetica, sans-serif">Gi=E1=BA=A3m t=
+=E1=BB=9Bi 1.5%/n=C4=83m l=C3=A3i su=E1=BA=A5t Margin</span></span></strong=
+></a></p></div></td></tr></tbody></table></td></tr></tbody></table></td></t=
+r></tbody></table></td><td style=3D"padding-top:0;padding-bottom:0" valign=
+=3D"top" class=3D"mceColumn" id=3D"mceColumnId-287" data-block-id=3D"287" c=
+olspan=3D"6" width=3D"50%"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"backgr=
+ound-color:transparent;padding-top:12px;padding-bottom:12px;padding-right:2=
+4px;padding-left:24px;border:0;border-radius:0" valign=3D"top" class=3D"mce=
+ImageBlockContainer" align=3D"center" id=3D"b301"><div><!--[if !mso]><!--><=
+/div><a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%=
+2Fwww.tcbs.com.vn%2Fca-nhan%2Fuu-dai%2Fhoan-phi-giao-dich-mua-iConnect%2F%3=
+Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Dpro=
+mo-iconnect-0307%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4df=
+a-a57b-de7446e43707-000000/L-eV6Y3BausSXTPTHmocZQ_o2oI=3D258" style=3D"disp=
+lay:block" target=3D"_blank" data-block-id=3D"301"><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bo=
+rder-collapse:separate;margin:0;vertical-align:top;max-width:100%;width:100=
+%;height:auto" role=3D"presentation" data-testid=3D"image-301"><tbody><tr><=
+td style=3D"border:0;border-radius:0;margin:0" valign=3D"top"><img alt=3D""=
+ src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/images/caa371cc=
+-a1a7-aca5-0220-5f00ba90d39b.png" width=3D"282" height=3D"auto" style=3D"di=
+splay:block;max-width:100%;height:auto;border-radius:0" class=3D"imageDropZ=
+one mceImage"/></td></tr></tbody></table></a><div><!--<![endif]--></div><di=
+v>
+<!--[if mso]>
+<a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww=
+.tcbs.com.vn%2Fca-nhan%2Fuu-dai%2Fhoan-phi-giao-dich-mua-iConnect%2F%3Futm_=
+source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Dpromo-ic=
+onnect-0307%26utm_medium=3Dall-kh/2/010e01a217d08e95-58910eb6-24f3-4dfa-a57=
+b-de7446e43707-000000/kWuK1rkOFFQcDLLXM9fUTx6SnSc=3D258"><span class=3D"mce=
+ImageBorder" style=3D"border:0;border-width:2px;vertical-align:top;margin:0=
+"><img role=3D"presentation" class=3D"imageDropZone mceImage" src=3D"https:=
+//mcusercontent.com/dacbe68074cece4d07a7a37ed/images/caa371cc-a1a7-aca5-022=
+0-5f00ba90d39b.png" alt=3D"" width=3D"282" height=3D"auto" style=3D"display=
+:block;max-width:282px;width:282px;height:auto"/></span></a>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-rig=
+ht:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutt=
+erContainerId-310"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tb=
+ody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding=
+-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b310"><table width=
+=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;bo=
+rder-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-r=
+ight:24px;padding-top:0;padding-bottom:0" class=3D"mceTextBlockContainer"><=
+div data-block-id=3D"310" class=3D"mceText" id=3D"d310" style=3D"width:100%=
+"><p style=3D"text-align: center;" class=3D"last-child"><a href=3D"https://=
+y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fca-n=
+han%2Fuu-dai%2Fhoan-phi-giao-dich-mua-iConnect%2F%3Futm_source=3Demail%26ut=
+m_campaign=3D701GA000001PwiRYAS%26utm_content=3Dpromo-iconnect-0307%26utm_m=
+edium=3Dall-kh/3/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-0000=
+00/9JoWX0DxN1Fpjq-KiXuTYWPxvyY=3D258" target=3D"_blank" style=3D"color: #c4=
+1c16; text-decoration: none;"><strong><span style=3D"font-size: 18px"><span=
+ style=3D"font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif">iCon=
+nect - Ho=C3=A0n 100% ph=C3=AD giao d=E1=BB=8Bch tr=C3=A1i phi=E1=BA=BFu</s=
+pan></span></strong></a></p></div></td></tr></tbody></table></td></tr></tbo=
+dy></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></=
+tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td><=
+/tr></tbody></table></td></tr></tbody></table></td></tr><tr><td valign=3D"t=
+op" class=3D"mceGutterContainer" id=3D"gutterContainerId-302"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top=
+:6px;padding-bottom:6px;padding-right:0;padding-left:0;border:0;border-radi=
+us:0" valign=3D"top" class=3D"mceLayoutContainer" id=3D"b302"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ role=3D"presentation" data-block-id=3D"302" id=3D"section_a5569d60cf7165bf=
+48f4a30b88706173" class=3D"mceLayout"><tbody><tr class=3D"mceRow"><td style=
+=3D"background-position:center;background-repeat:no-repeat;background-size:=
+cover" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" role=3D"presentation"><tbody><tr><td valign=3D"top" class=
+=3D"mceColumn" id=3D"mceColumnId--15" data-block-id=3D"-15" colspan=3D"12" =
+width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"border:0;border-ra=
+dius:0" valign=3D"top" align=3D"center" id=3D"b-7"><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"pre=
+sentation" data-block-id=3D"-7"><tbody><tr class=3D"mceRow"><td style=3D"ba=
+ckground-position:center;background-repeat:no-repeat;background-size:cover"=
+ valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" role=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mc=
+eColumn" id=3D"mceColumnId--20" data-block-id=3D"-20" colspan=3D"12" width=
+=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" role=3D"presentation"><tbody><tr><td style=3D"border:0;border-radius:=
+0" valign=3D"top" id=3D"b307"><table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block=
+-id=3D"307"><tbody><tr class=3D"mceRow"><td style=3D"background-position:ce=
+nter;background-repeat:no-repeat;background-size:cover;padding-top:0px;padd=
+ing-bottom:0px" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"24" width=3D"100%" style=3D"table-layout:fixed" role=3D"presentati=
+on"><colgroup><col span=3D"1" width=3D"8.333333333333332%"/><col span=3D"1"=
+ width=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.333333333333332%"=
+/><col span=3D"1" width=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.=
+333333333333332%"/><col span=3D"1" width=3D"8.333333333333332%"/><col span=
+=3D"1" width=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.33333333333=
+3332%"/><col span=3D"1" width=3D"8.333333333333332%"/><col span=3D"1" width=
+=3D"8.333333333333332%"/><col span=3D"1" width=3D"8.333333333333332%"/><col=
+ span=3D"1" width=3D"8.333333333333332%"/></colgroup><tbody><tr><td style=
+=3D"padding-top:0;padding-bottom:0" valign=3D"top" class=3D"mceColumn" id=
+=3D"mceColumnId-304" data-block-id=3D"304" colspan=3D"6" width=3D"50%"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"=
+presentation"><tbody><tr><td style=3D"background-color:transparent;padding-=
+top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px;border:0;=
+border-radius:0" valign=3D"top" class=3D"mceImageBlockContainer" align=3D"c=
+enter" id=3D"b308"><div><!--[if !mso]><!--></div><a href=3D"https://y1ghrnz=
+q.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fca-nhan%2Fu=
+u-dai%2Fdau-tu-deu-tay%2F%3Futm_source=3Demail%26utm_campaign=3D701GA000001=
+PwiRYAS%26utm_content=3Dpromo-fund-0307%26utm_medium=3Dall-kh/1/010e01a217d=
+08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/Ta5Wdosi9x5Knr2do1EBhuu3F=
+cA=3D258" style=3D"display:block" target=3D"_blank" data-block-id=3D"308"><=
+table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" style=3D"border-collapse:separate;margin:0;vertical-align:top;m=
+ax-width:100%;width:100%;height:auto" role=3D"presentation" data-testid=3D"=
+image-308"><tbody><tr><td style=3D"border:0;border-radius:0;margin:0" valig=
+n=3D"top"><img alt=3D"" src=3D"https://mcusercontent.com/dacbe68074cece4d07=
+a7a37ed/images/7195e81d-48a7-fc1f-590a-8b0755b237fd.jpg" width=3D"282" heig=
+ht=3D"auto" style=3D"display:block;max-width:100%;height:auto;border-radius=
+:0" class=3D"imageDropZone mceImage"/></td></tr></tbody></table></a><div><!=
+--<![endif]--></div><div>
+<!--[if mso]>
+<a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww=
+.tcbs.com.vn%2Fca-nhan%2Fuu-dai%2Fdau-tu-deu-tay%2F%3Futm_source=3Demail%26=
+utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Dpromo-fund-0307%26utm_med=
+ium=3Dall-kh/2/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000=
+/fXOE85c-woS2BHztHSjWx-em8Cw=3D258"><span class=3D"mceImageBorder" style=3D=
+"border:0;border-width:2px;vertical-align:top;margin:0"><img role=3D"presen=
+tation" class=3D"imageDropZone mceImage" src=3D"https://mcusercontent.com/d=
+acbe68074cece4d07a7a37ed/images/7195e81d-48a7-fc1f-590a-8b0755b237fd.jpg" a=
+lt=3D"" width=3D"282" height=3D"auto" style=3D"display:block;max-width:282p=
+x;width:282px;height:auto"/></span></a>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-rig=
+ht:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutt=
+erContainerId-311"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tb=
+ody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding=
+-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b311"><table width=
+=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;bo=
+rder-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-r=
+ight:24px;padding-top:0;padding-bottom:0" class=3D"mceTextBlockContainer"><=
+div data-block-id=3D"311" class=3D"mceText" id=3D"d311" style=3D"width:100%=
+"><p style=3D"text-align: center;" class=3D"last-child"><a href=3D"https://=
+y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fca-n=
+han%2Fuu-dai%2Fdau-tu-deu-tay%2F%3Futm_source=3Demail%26utm_campaign=3D701G=
+A000001PwiRYAS%26utm_content=3Dpromo-fund-0307%26utm_medium=3Dall-kh/3/010e=
+01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/3TlUseciM1cLqmdNTa=
+fzzlATdYs=3D258" target=3D"_blank" style=3D"color: #c41c16; text-decoration=
+: none;"><strong><span style=3D"font-size: 18px"><span style=3D"font-family=
+: Arial, 'Helvetica Neue', Helvetica, sans-serif">=C4=90=E1=BA=A7u t=C6=B0 =
+=C4=91=E1=BB=8Bnh k=E1=BB=B3 c=C3=B9ng qu=E1=BB=B9 Techcom Capital - Nh=E1=
+=BA=ADn ngay 50 iXu!</span></span></strong></a></p></div></td></tr></tbody>=
+</table></td></tr></tbody></table></td></tr></tbody></table></td><td style=
+=3D"padding-top:0;padding-bottom:0" valign=3D"top" class=3D"mceColumn" id=
+=3D"mceColumnId-306" data-block-id=3D"306" colspan=3D"6" width=3D"50%"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"=
+presentation"><tbody><tr><td style=3D"background-color:transparent;padding-=
+top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px;border:0;=
+border-radius:0" valign=3D"top" class=3D"mceImageBlockContainer" align=3D"c=
+enter" id=3D"b309"><div><!--[if !mso]><!--></div><a href=3D"https://y1ghrnz=
+q.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fca-nhan%2Fu=
+u-dai%2Fdon-mua-moi-sang-san-uu-dai-vang%2F%3Futm_source=3Demail%26utm_camp=
+aign=3D701GA000001PwiRYAS%26utm_content=3Dpromo-ipower-0307%26utm_medium=3D=
+all-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/uAKPK=
+QfA65I1DJslekK_5DG2UX8=3D258" style=3D"display:block" target=3D"_blank" dat=
+a-block-id=3D"309"><table align=3D"center" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" style=3D"border-collapse:separate;margin:0;=
+vertical-align:top;max-width:100%;width:100%;height:auto" role=3D"presentat=
+ion" data-testid=3D"image-309"><tbody><tr><td style=3D"border:0;border-radi=
+us:0;margin:0" valign=3D"top"><img alt=3D"" src=3D"https://mcusercontent.co=
+m/dacbe68074cece4d07a7a37ed/images/feae5413-0663-89fc-dd27-9a109d433162.png=
+" width=3D"282" height=3D"auto" style=3D"display:block;max-width:100%;heigh=
+t:auto;border-radius:0" class=3D"imageDropZone mceImage"/></td></tr></tbody=
+></table></a><div><!--<![endif]--></div><div>
+<!--[if mso]>
+<a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww=
+.tcbs.com.vn%2Fca-nhan%2Fuu-dai%2Fdon-mua-moi-sang-san-uu-dai-vang%2F%3Futm=
+_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Dpromo-i=
+power-0307%26utm_medium=3Dall-kh/2/010e01a217d08e95-58910eb6-24f3-4dfa-a57b=
+-de7446e43707-000000/K4gGPm6awVkoo1RvawTfajDbxpw=3D258"><span class=3D"mceI=
+mageBorder" style=3D"border:0;border-width:2px;vertical-align:top;margin:0"=
+><img role=3D"presentation" class=3D"imageDropZone mceImage" src=3D"https:/=
+/mcusercontent.com/dacbe68074cece4d07a7a37ed/images/feae5413-0663-89fc-dd27=
+-9a109d433162.png" alt=3D"" width=3D"282" height=3D"auto" style=3D"display:=
+block;max-width:282px;width:282px;height:auto"/></span></a>
+<![endif]-->
+</div></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-rig=
+ht:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutt=
+erContainerId-312"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tb=
+ody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding=
+-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b312"><table width=
+=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;bo=
+rder-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-r=
+ight:24px;padding-top:0;padding-bottom:0" class=3D"mceTextBlockContainer"><=
+div data-block-id=3D"312" class=3D"mceText" id=3D"d312" style=3D"width:100%=
+"><p style=3D"text-align: center;" class=3D"last-child"><a href=3D"https://=
+y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fca-n=
+han%2Fuu-dai%2Fdon-mua-moi-sang-san-uu-dai-vang%2F%3Futm_source=3Demail%26u=
+tm_campaign=3D701GA000001PwiRYAS%26utm_content=3Dpromo-ipower-0307%26utm_me=
+dium=3Dall-kh/3/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-00000=
+0/-orOKPdAlXSlV4JBwBTtl8hsr9A=3D258" target=3D"_blank" style=3D"color: #c41=
+c16; text-decoration: none;"><strong><span style=3D"font-size: 18px"><span =
+style=3D"font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif">iPowe=
+r - =C4=90=C3=B3n m=C3=B9a m=E1=BB=9Bi sang, s=C4=83n =C6=B0u =C4=91=C3=A3i=
+ v=C3=A0ng</span></span></strong></a></p></div></td></tr></tbody></table></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><t=
+d style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" v=
+align=3D"top" class=3D"mceGutterContainer" id=3D"gutterContainerId-313"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"border-collapse:separate" role=3D"presentation"><tbody><tr><td style=3D=
+"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;bor=
+der-radius:0" valign=3D"top" id=3D"b313"><table width=3D"100%" style=3D"bor=
+der:0;background-color:transparent;border-radius:0;border-collapse:separate=
+"><tbody><tr><td style=3D"padding-left:24px;padding-right:24px;padding-top:=
+12px;padding-bottom:12px" class=3D"mceTextBlockContainer"><div data-block-i=
+d=3D"313" class=3D"mceText" id=3D"d313" style=3D"width:100%"><p class=3D"la=
+st-child" style=3D"text-align: center;"><a href=3D"https://y1ghrnzq.r.ap-so=
+utheast-1.awstrack.me/L0/https:%2F%2Ftcinvest.tcbs.com.vn%2Fapp%2Flaunch%2F=
+ireward%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_cont=
+ent=3Dpromo-ireward-0307%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-=
+24f3-4dfa-a57b-de7446e43707-000000/K0NW8ECvOJqhFIP6XlFuTjiL4oY=3D258" targe=
+t=3D"_blank" style=3D"color: #c41c16;"><strong style=3D"color: #c41c16;"><s=
+pan style=3D"font-size: 18px"><span style=3D"background-color: transparent"=
+>Xem </span></span><span style=3D"text-decoration:underline; color: #c41c16=
+;"><span style=3D"font-size: 18px"><span style=3D"background-color: transpa=
+rent">to=C3=A0n b=E1=BB=99 =C6=B0u =C4=91=C3=A3i t=E1=BA=A1i iReward</span>=
+</span></span></strong></a></p></div></td></tr></tbody></table></td></tr></=
+tbody></table></td></tr><tr><td style=3D"background-color:transparent;paddi=
+ng-top:6px;padding-bottom:6px;padding-right:24px;padding-left:24px;border:0=
+;border-radius:0" valign=3D"top" class=3D"mceDividerBlockContainer" id=3D"b=
+366"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"background-color:transparent;width:100%" role=3D=
+"presentation" class=3D"mceDividerContainer" data-block-id=3D"366"><tbody><=
+tr><td style=3D"min-width:100%;border-top-width:1px;border-top-style:solid;=
+border-top-color:#BDBDBD;line-height:0;font-size:0" valign=3D"top" class=3D=
+"mceDividerBlock"> </td></tr></tbody></table></td></tr></tbody></table></td=
+></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><=
+!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></td></tr></tbody><t=
+body data-block-id=3D"13" class=3D"mceWrapper"><tr><td style=3D"background-=
+color:#f4f4f4" valign=3D"top" align=3D"center" class=3D"mceSection13"><!--[=
+if (gte mso 9)|(IE)]><table align=3D"center" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" width=3D"660" style=3D"width:660px;"><tr><td><![endif]--=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" sty=
+le=3D"max-width:660px" role=3D"presentation"><tbody><tr><td style=3D"backgr=
+ound-color:#ffffff" valign=3D"top" class=3D"mceWrapperInner"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ role=3D"presentation" data-block-id=3D"12"><tbody><tr class=3D"mceRow"><td=
+ style=3D"background-position:center;background-repeat:no-repeat;background=
+-size:cover" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"paddi=
+ng-top:0;padding-bottom:0" valign=3D"top" class=3D"mceColumn" id=3D"mceColu=
+mnId--13" data-block-id=3D"-13" colspan=3D"12" width=3D"100%"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0=
+;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterCo=
+ntainerId-367"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody>=
+<tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-lef=
+t:0;border:0;border-radius:0" valign=3D"top" id=3D"b367"><table width=3D"10=
+0%" style=3D"border:0;background-color:transparent;border-radius:0;border-c=
+ollapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-right:2=
+4px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlockContainer"><=
+div data-block-id=3D"367" class=3D"mceText" id=3D"d367" style=3D"width:100%=
+"><p class=3D"last-child" style=3D"text-align: justify; margin-top: 2px; ma=
+rgin-bottom: 2px;"><strong><span style=3D"font-size: 18px">Dear Valued cust=
+omer</span></strong><a href=3D"" id=3D"eng" name=3D"eng" data-anchor-name=
+=3D"eng"><strong><span style=3D"font-size: 18px">,</span></strong></a></p><=
+/div></td></tr></tbody></table></td></tr></tbody></table></td></tr><!-- TCB=
+S_EN_CONTENT_START --><tr><td style=3D"padding-top:0;padding-bottom:0;paddi=
+ng-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=
+=3D"gutterContainerId-368"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentat=
+ion"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0=
+;padding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b368"><table=
+ width=3D"100%" style=3D"border:0;background-color:transparent;border-radiu=
+s:0;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;pad=
+ding-right:24px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlock=
+Container"><div data-block-id=3D"368" class=3D"mceText" id=3D"d368" style=
+=3D"width:100%"><p class=3D"last-child" style=3D"text-align: justify; margi=
+n-top: 2px; margin-bottom: 2px;"><strong><span style=3D"color:rgb(196, 28, =
+22);"><span style=3D"font-size: 18px">1. Latest Research Publication</span>=
+</span></strong></p></div></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:=
+0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterC=
+ontainerId-483"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" style=3D"border-collapse:separate" role=3D"presentation"><tbody=
+><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-le=
+ft:0;border:0;border-radius:0" valign=3D"top" id=3D"b483"><table width=3D"1=
+00%" style=3D"border:0;background-color:transparent;border-radius:0;border-=
+collapse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-right:=
+24px;padding-top:6px;padding-bottom:6px" class=3D"mceTextBlockContainer"><d=
+iv data-block-id=3D"483" class=3D"mceText" id=3D"d483" style=3D"width:100%"=
+><p style=3D"text-align: left;" class=3D"last-child"><a href=3D"https://y1g=
+hrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fwp-cont=
+ent%2Fuploads%2F2026%2F11%2F20261126_US_Section_301_tariffs_35_percent_on_V=
+ietnam.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_c=
+ontent=3Dbcpt-en-My-de-xuat-thue-Muc-301-toi-da-35-voi-hang-hoa-Viet-Nam-nh=
+om-xuat-khau-nao-chiu-tac-dong%26utm_medium=3Dall-kh/1/010e01a217d08e95-589=
+10eb6-24f3-4dfa-a57b-de7446e43707-000000/4bLjZmSzqBW9ikzVRZmhtjM5N3g=3D258"=
+ target=3D"_blank"><strong>US proposes Section 301 tariffs of up to 35% on =
+Vietnamese goods: which exporters are affected?</strong></a></p></div></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style=3D"p=
+adding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"top=
+" class=3D"mceGutterContainer" id=3D"gutterContainerId-492"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top=
+:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;border-radius:0=
+" valign=3D"top" id=3D"b492"><table width=3D"100%" style=3D"border:0;backgr=
+ound-color:transparent;border-radius:0;border-collapse:separate"><tbody><tr=
+><td style=3D"padding-left:24px;padding-right:24px;padding-top:6px;padding-=
+bottom:6px" class=3D"mceTextBlockContainer"><div data-block-id=3D"492" clas=
+s=3D"mceText" id=3D"d492" style=3D"width:100%"><p style=3D"text-align: left=
+;" class=3D"last-child"><a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstra=
+ck.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fwp-content%2Fuploads%2F2026%2F11%2F2=
+0261126_ACV_Q3_2026_Business_Results_Update.pdf%3Futm_source=3Demail%26utm_=
+campaign=3D701GA000001PwiRYAS%26utm_content=3Dbcpt-en-ACV-Cap-nhat-KQKD-Q3-=
+2026%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de744=
+6e43707-000000/wLj22M9QFlb4_sEjPpXzgsvO2cY=3D258" target=3D"_blank"><strong=
+>ACV - Q3/2026 Earnings Update</strong></a></p></div></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td></tr><tr><td style=3D"padding-top:0;padd=
+ing-bottom:0;padding-right:0;padding-left:0" valign=3D"top" class=3D"mceGut=
+terContainer" id=3D"gutterContainerId-493"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:separate" =
+role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padding-bottom:=
+0;padding-right:0;padding-left:0;border:0;border-radius:0" valign=3D"top" i=
+d=3D"b493"><table width=3D"100%" style=3D"border:0;background-color:transpa=
+rent;border-radius:0;border-collapse:separate"><tbody><tr><td style=3D"padd=
+ing-left:24px;padding-right:24px;padding-top:6px;padding-bottom:6px" class=
+=3D"mceTextBlockContainer"><div data-block-id=3D"493" class=3D"mceText" id=
+=3D"d493" style=3D"width:100%"><p style=3D"text-align: left;" class=3D"last=
+-child"><a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%=
+2F%2Fwww.tcbs.com.vn%2Fwp-content%2Fuploads%2F2026%2F11%2F20261126_VNM_Q3_2=
+026_Business_Results_Update.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA=
+000001PwiRYAS%26utm_content=3Dbcpt-en-VNM-Cap-nhat-KQKD-Q3-2026%26utm_mediu=
+m=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/4=
+S6aNYurYctlDQ_JeXGohjLWyts=3D258" target=3D"_blank"><strong>VNM - Q3/2026 E=
+arnings Update</strong></a></p></div></td></tr></tbody></table></td></tr></=
+tbody></table></td></tr><tr><td style=3D"background-color:transparent;paddi=
+ng-top:6px;padding-bottom:6px;padding-right:24px;padding-left:24px;border:0=
+;border-radius:0" valign=3D"top" class=3D"mceDividerBlockContainer" id=3D"b=
+375"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"background-color:transparent;width:100%" role=3D=
+"presentation" class=3D"mceDividerContainer" data-block-id=3D"375"><tbody><=
+tr><td style=3D"min-width:100%;border-top-width:1px;border-top-style:dashed=
+;border-top-color:#D8D8D8;line-height:0;font-size:0" valign=3D"top" class=
+=3D"mceDividerBlock"> </td></tr></tbody></table></td></tr><tr><td style=3D"=
+padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"to=
+p" class=3D"mceGutterContainer" id=3D"gutterContainerId-376"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:separate" role=3D"presentation"><tbody><tr><td style=3D"padding-top=
+:0;padding-bottom:0;padding-right:0;padding-left:0;border:0;border-radius:0=
+" valign=3D"top" id=3D"b376"><table width=3D"100%" style=3D"border:0;backgr=
+ound-color:transparent;border-radius:0;border-collapse:separate"><tbody><tr=
+><td style=3D"padding-left:24px;padding-right:24px;padding-top:12px;padding=
+-bottom:12px" class=3D"mceTextBlockContainer"><div data-block-id=3D"376" cl=
+ass=3D"mceText" id=3D"d376" style=3D"width:100%"><p class=3D"last-child" st=
+yle=3D"text-align: center;"><a href=3D"https://y1ghrnzq.r.ap-southeast-1.aw=
+strack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fen%2Finformation%2Fanalyst-repor=
+ts%2F/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/FumyAT=
+T_SULeFqs7EzBb8WwMYjY=3D258" target=3D"_blank" style=3D"color: #c41c16;"><s=
+trong style=3D"color: #c41c16;"><span style=3D"text-decoration:underline; c=
+olor: #c41c16;"><span style=3D"font-size: 18px"><span style=3D"background-c=
+olor: transparent">View all reports</span></span></span></strong></a></p></=
+div></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td s=
+tyle=3D"background-color:transparent;padding-top:6px;padding-bottom:6px;pad=
+ding-right:24px;padding-left:24px;border:0;border-radius:0" valign=3D"top" =
+class=3D"mceDividerBlockContainer" id=3D"b412"><table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"backgr=
+ound-color:transparent;width:100%" role=3D"presentation" class=3D"mceDivide=
+rContainer" data-block-id=3D"412"><tbody><tr><td style=3D"min-width:100%;bo=
+rder-top-width:1px;border-top-style:solid;border-top-color:#BDBDBD;line-hei=
+ght:0;font-size:0" valign=3D"top" class=3D"mceDividerBlock"> </td></tr></tb=
+ody></table></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;paddi=
+ng-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=
+=3D"gutterContainerId-377"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentat=
+ion"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0=
+;padding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b377"><table=
+ width=3D"100%" style=3D"border:0;background-color:transparent;border-radiu=
+s:0;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;pad=
+ding-right:24px;padding-top:6px;padding-bottom:6px" class=3D"mceTextBlockCo=
+ntainer"><div data-block-id=3D"377" class=3D"mceText" id=3D"d377" style=3D"=
+width:100%"><p style=3D"line-height: 1.25; mso-line-height-alt: 125%; text-=
+align: justify;" class=3D"last-child"><strong><span style=3D"color:#c41c16;=
+"><span style=3D"font-size: 18px">2. Market News Update</span></span></stro=
+ng></p></div></td></tr></tbody></table></td></tr></tbody></table></td></tr>=
+<tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-lef=
+t:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterContainerId-38=
+2"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" s=
+tyle=3D"border-collapse:separate" role=3D"presentation"><tbody><tr><td styl=
+e=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border:0=
+;border-radius:0" valign=3D"top" id=3D"b382"><table width=3D"100%" style=3D=
+"border:0;background-color:transparent;border-radius:0;border-collapse:sepa=
+rate"><tbody><tr><td style=3D"padding-left:24px;padding-right:24px;padding-=
+top:6px;padding-bottom:6px" class=3D"mceTextBlockContainer"><div data-block=
+-id=3D"382" class=3D"mceText" id=3D"d382" style=3D"width:100%"><p style=3D"=
+line-height: 1.5; mso-line-height-alt: 150%; text-align: justify;"><strong>=
+<span style=3D"color:rgb(26, 26, 26);">General Market</span></strong></p><u=
+l><li style=3D"line-height: 1.5; mso-line-height-alt: 150%; text-align: jus=
+tify;"><p style=3D"margin-bottom: 8.0pt; line-height: 1.5; mso-line-height-=
+alt: 150%; text-align: justify;"><strong>VN-Index:</strong> Fell 3.42% (=E2=
+=88=9257.77 points) to close at 1,629.68 points, its steepest one-session d=
+ecline since 22 July and its lowest close since 24 March, in the first trad=
+ing session after the Office of the US Trade Representative (USTR) announce=
+d proposed tariffs on Vietnamese goods. The index opened below the referenc=
+e level and stayed below it throughout the morning session; in the afternoo=
+n session, selling pressure intensified sharply and broadened, pushing the =
+index below the psychological 1,650-point threshold and leaving it to close=
+ near its intraday low. Sentiment was overwhelmingly negative as all sector=
+ groups declined, with Vingroup-ecosystem stocks falling across the board, =
+alongside selling pressure in most banking, real estate, securities and tra=
+nsportation - ports stocks, putting considerable pressure on the index. On =
+the other side, gains in a handful of names in the consumer group only part=
+ly limited the index's decline.</p></li><li style=3D"line-height: 1.5; mso-=
+line-height-alt: 150%; text-align: justify;"><p style=3D"margin-bottom: 8.0=
+pt; line-height: 1.5; mso-line-height-alt: 150%; text-align: justify;"><str=
+ong>Liquidity:</strong> Improved sharply from the previous session as match=
+ed trading value on HoSE reached VND 13,479.0 billion (691.6 million shares=
+), up 59.6% and 14.4% above the 30-session average. Total trading value rea=
+ched VND 16,043.7 billion, of which put-through trades contributed VND 2,56=
+4.6 billion.</p></li><li style=3D"line-height: 1.5; mso-line-height-alt: 15=
+0%; text-align: justify;"><p style=3D"margin-bottom: 8.0pt; line-height: 1.=
+5; mso-line-height-alt: 150%; text-align: justify;"><strong>Foreign trading=
+:</strong> Foreign investors were net sellers for a seventh consecutive ses=
+sion, offloading VND 186.9 billion on HoSE, concentrated in <a href=3D"http=
+s://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.vn=
+%2Foneclick%2FVIC_EN.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001P=
+wiRYAS%26utm_content=3Drp-en-1click-VIC-2611%26utm_medium=3Dall-kh/1/010e01=
+a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/ANl_eICShO_Ors8w1Jec=
+pSQT_Uk=3D258"><strong>VIC</strong></a>, <a href=3D"https://y1ghrnzq.r.ap-s=
+outheast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2FTCB_E=
+N.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_conten=
+t=3Drp-en-1click-TCB-2611%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6=
+-24f3-4dfa-a57b-de7446e43707-000000/yWZLgaUtM0--6uJiKZOmZJhxNnA=3D258"><str=
+ong>TCB</strong></a> and <a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstr=
+ack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2FVPL_EN.pdf%3Futm_sour=
+ce=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Drp-en-1click=
+-VPL-2611%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-=
+de7446e43707-000000/qOv9fCJu2zHQGQrgBdNgr_G45vA=3D258"><strong>VPL</strong>=
+</a>. On the other side, net buying focused on <a href=3D"https://y1ghrnzq.=
+r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2=
+FCTD_EN.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_=
+content=3Drp-en-1click-CTD-2611%26utm_medium=3Dall-kh/1/010e01a217d08e95-58=
+910eb6-24f3-4dfa-a57b-de7446e43707-000000/q_raPNpmY5nPKfILS_fvLmJXHD0=3D258=
+"><strong>CTD</strong></a>, <a href=3D"https://y1ghrnzq.r.ap-southeast-1.aw=
+strack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2FVNM_EN.pdf%3Futm_s=
+ource=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Drp-en-1cl=
+ick-VNM-2611%26utm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a5=
+7b-de7446e43707-000000/-nMzW4MiPVB7eTarUrV7pmgB1_4=3D258"><strong>VNM</stro=
+ng></a> and <a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/htt=
+ps:%2F%2Fstatic.tcbs.com.vn%2Foneclick%2FVPI_EN.pdf%3Futm_source=3Demail%26=
+utm_campaign=3D701GA000001PwiRYAS%26utm_content=3Drp-en-1click-VPI-2611%26u=
+tm_medium=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-=
+000000/2ED_Tcyy9kVdPIxWj6P61Orz4sA=3D258"><strong>VPI</strong></a>. Year to=
+ date, foreign investors have been net sellers of VND 133,200.1 billion on =
+HoSE.</p></li><li style=3D"line-height: 1.5; mso-line-height-alt: 150%; tex=
+t-align: justify;"><p style=3D"margin-bottom: 8.0pt; line-height: 1.5; mso-=
+line-height-alt: 150%; text-align: justify;"><strong>Technicals:</strong> T=
+he index closed below all four moving averages, namely the MA5 around 1,679=
+ points, the MA10 around 1,703 points, the MA20 around 1,717 points and the=
+ MA50 around 1,740 points, staying below the MA50 for the 23rd consecutive =
+session. After losing the low zone of the 20 and 23 November sessions aroun=
+d 1,666 - 1,672 points, that zone has become immediate resistance, while th=
+e late-March low zone around 1,591 - 1,615 points, which includes the psych=
+ological 1,600-point threshold, is the nearest support.</p></li></ul><p sty=
+le=3D"line-height: 1; mso-line-height-alt: 100%; text-align: justify;"><br/=
+></p><p style=3D"line-height: 1.5; mso-line-height-alt: 150%; text-align: j=
+ustify;"><strong><span style=3D"color:rgb(26, 26, 26);">Macroeconomics</spa=
+n></strong></p><ul><li style=3D"line-height: 1.5; mso-line-height-alt: 150%=
+; text-align: justify;"><p style=3D"margin-bottom: 8.0pt; line-height: 1.5;=
+ mso-line-height-alt: 150%; text-align: justify;"><strong>Domestic:</strong=
+> On the exchange rate, the State Bank of Vietnam set the central rate at V=
+ND 25,676/USD on 26 November, down VND 3 from the previous session. On fuel=
+ prices, the Ministries of Industry and Trade and of Finance cut retail pri=
+ces from 3pm on 26 November, with E5RON92 petrol down VND 185 per litre to =
+VND 18,391 per litre, E10RON95-III petrol down VND 44 per litre to VND 19,0=
+56 per litre and diesel down VND 1,382 per litre to VND 24,965 per litre.</=
+p></li><li style=3D"line-height: 1.5; mso-line-height-alt: 150%; text-align=
+: justify;"><p style=3D"margin-bottom: 8.0pt; line-height: 1.5; mso-line-he=
+ight-alt: 150%; text-align: justify;"><strong>International:</strong> On tr=
+ade, the USTR announced preliminary determinations in 14 Section 301 invest=
+igations into structural excess capacity in manufacturing, proposing tariff=
+s of up to 35% on imports from Vietnam (with exemptions for certain goods),=
+ which could be adjusted to 20% if the two sides reach an Agreement on Reci=
+procal Trade. The deadline for comments is 5 January 2027 and a public hear=
+ing is scheduled to begin on 25 January 2027; the Ministry of Industry and =
+Trade said the measure is only a proposal, is not yet in effect and has not=
+ been officially applied. On the US stock market, shares were mixed on 25 N=
+ovember, with the Dow Jones up 0.33% to 50,182.95 points, while the S&amp;P=
+ 500 fell 0.25% to 7,182.78 points and the Nasdaq fell 0.62% to 23,585.80 p=
+oints; US markets were closed on 26 November for Thanksgiving.</p></li></ul=
+><p style=3D"line-height: 1; mso-line-height-alt: 100%; text-align: justify=
+;"><br/></p><p style=3D"line-height: 1.5; mso-line-height-alt: 150%; text-a=
+lign: justify;"><strong><span style=3D"color:rgb(26, 26, 26);">Corporate Ne=
+ws</span></strong></p><ul class=3D"last-child"><li style=3D"line-height: 1.=
+5; mso-line-height-alt: 150%; text-align: justify;"><p style=3D"margin-bott=
+om: 8.0pt; line-height: 1.5; mso-line-height-alt: 150%; text-align: justify=
+;"><a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2F=
+static.tcbs.com.vn%2Foneclick%2FMSN_EN.pdf%3Futm_source=3Demail%26utm_campa=
+ign=3D701GA000001PwiRYAS%26utm_content=3Drp-en-1click-MSN-2611%26utm_medium=
+=3Dall-kh/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/CN=
+cZ-ItTw_DMLhAnbi-Xgvjf8nI=3D258"><strong>MSN</strong></a><strong>:</strong>=
+ Masan Group Corporation published documents for a written shareholder cons=
+ultation on adjusting its 2026 business plan, raising its net revenue targe=
+t to VND 98,000 - 105,000 billion and its consolidated net profit after tax=
+ target to VND 10,000 - 11,500 billion, from VND 93,500 - 98,000 billion an=
+d VND 7,250 - 7,900 billion approved at the annual general meeting. In the =
+same consultation, the Board proposes reducing the number of Board members =
+from 6 to 5 for the remainder of the 2024 - 2029 term; the deadline for ret=
+urning ballots is 5pm on 7 December.</p></li></ul></div></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr><tr><td valign=3D"top" class=3D"=
+mceGutterContainer" id=3D"gutterContainerId-380"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:separ=
+ate" role=3D"presentation"><tbody><tr><td style=3D"padding-top:8px;padding-=
+bottom:8px;padding-right:0;padding-left:0;border:0;border-radius:0" valign=
+=3D"top" class=3D"mceLayoutContainer" id=3D"b380"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"pres=
+entation" data-block-id=3D"380" id=3D"section_5159cd67241d6f22a648102fd526b=
+d0a" class=3D"mceLayout"><tbody><tr class=3D"mceRow"><td style=3D"backgroun=
+d-position:center;background-repeat:no-repeat;background-size:cover" valign=
+=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" role=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mceColumn=
+" id=3D"mceColumnId--18" data-block-id=3D"-18" colspan=3D"12" width=3D"100%=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" ro=
+le=3D"presentation"><tbody><tr><td style=3D"border:0;border-radius:0" valig=
+n=3D"top" align=3D"center" id=3D"b-11"><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" d=
+ata-block-id=3D"-11"><tbody><tr class=3D"mceRow"><td style=3D"background-po=
+sition:center;background-repeat:no-repeat;background-size:cover" valign=3D"=
+top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ role=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mceColumn" id=
+=3D"mceColumnId--22" data-block-id=3D"-22" colspan=3D"12" width=3D"100%"><t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation"><tbody><tr><td style=3D"border:0;border-radius:0" valign=
+=3D"top" id=3D"b379"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"37=
+9"><tbody><tr class=3D"mceRow"><td style=3D"background-position:center;back=
+ground-repeat:no-repeat;background-size:cover" valign=3D"top"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"24" width=3D"100%" role=3D"presenta=
+tion"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0" valign=3D"top=
+" class=3D"mceColumn" id=3D"mceColumnId-378" data-block-id=3D"378" colspan=
+=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padding-to=
+p:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"top" class=
+=3D"mceGutterContainer" id=3D"gutterContainerId-421"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:s=
+eparate" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;paddin=
+g-bottom:0;padding-right:0;padding-left:0;border:0;border-radius:0" valign=
+=3D"top" id=3D"b421"><table width=3D"100%" style=3D"border:0;background-col=
+or:transparent;border-radius:0;border-collapse:separate"><tbody><tr><td sty=
+le=3D"padding-left:24px;padding-right:24px;padding-top:6px;padding-bottom:6=
+px" class=3D"mceTextBlockContainer"><div data-block-id=3D"421" class=3D"mce=
+Text" id=3D"d421" style=3D"width:100%"><p style=3D"line-height: 1.25; mso-l=
+ine-height-alt: 125%; text-align: justify;" class=3D"last-child"><strong><s=
+pan style=3D"color:#c41c16;"><span style=3D"font-size: 18px">3. Recommendat=
+ion</span></span></strong></p></div></td></tr></tbody></table></td></tr></t=
+body></table></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padd=
+ing-right:0;padding-left:0" valign=3D"top" class=3D"mceGutterContainer" id=
+=3D"gutterContainerId-422"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentat=
+ion"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0=
+;padding-left:0;border:0;border-radius:0" valign=3D"top" id=3D"b422"><table=
+ width=3D"100%" style=3D"border:0;background-color:transparent;border-radiu=
+s:0;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;pad=
+ding-right:24px;padding-top:0;padding-bottom:6px" class=3D"mceTextBlockCont=
+ainer"><div data-block-id=3D"422" class=3D"mceText" id=3D"d422" style=3D"wi=
+dth:100%"><ul class=3D"last-child"><li style=3D"text-align: justify;"><p st=
+yle=3D"margin-bottom: 8.0pt; text-align: justify;"><a href=3D"https://y1ghr=
+nzq.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fstatic.tcbs.com.vn%2Fonecli=
+ck%2FGMD_EN.pdf%3Futm_source=3Demail%26utm_campaign=3D701GA000001PwiRYAS%26=
+utm_content=3Drp-en-1click-GMD-2611%26utm_medium=3Dall-kh/1/010e01a217d08e9=
+5-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/Fpq-ZNqDprq9Iv-afBCIK506N9I=
+=3D258" target=3D"_blank"><strong>GMD</strong></a><span style=3D"font-size:=
+ 18px"> - </span><strong><span style=3D"font-size: 18px">Hold</span></stron=
+g><span style=3D"font-size: 18px"> - In October 2026, container throughput =
+across Vietnam's seaport system reached 2.70 million TEU (+8.4% YoY), with =
+the two deep-water clusters, Cai Mep =E2=80=93 Thi Vai and Lach Huyen, acco=
+unting for 40% of total volume and about 75% of growth. We believe GMD is a=
+ direct beneficiary of this trend given Gemalink's leading position at Cai =
+Mep, the key contributor to its profit from associates and joint ventures. =
+Once completed, Gemalink Phase 2A will expand capacity and large-vessel han=
+dling, creating room for long-term growth. As for the US Section 301 tariff=
+ proposal announced on 25 Nov, it is only a preliminary determination and n=
+ot yet in effect; a final decision is expected no earlier than February 202=
+7 and no later than 11 March 2027. The maximum 35% rate could be reduced to=
+ 20% if Vietnam and the US reach a reciprocal trade agreement, limiting the=
+ impact on export volumes. Investors may therefore continue to hold the sto=
+ck while monitoring its outlook and the progress of Vietnam=E2=80=93US trad=
+e negotiations.</span></p></li></ul></div></td></tr></tbody></table></td></=
+tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td=
+></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><=
+/td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr></tbody></table></td></tr></tbody></table></td></tr><!-- TCBS_E=
+N_CONTENT_END --><tr data-tcbs-block=3D"awards"><td style=3D"background-col=
+or:transparent;padding-top:12px;padding-bottom:12px;padding-right:20px;padd=
+ing-left:0;border:0;border-radius:0" valign=3D"top" class=3D"mceImageBlockC=
+ontainer" align=3D"right" id=3D"b29"><div><!--[if !mso]><!--></div><table a=
+lign=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" style=3D"border-collapse:separate;margin:0;vertical-align:top;max-width=
+:222px;width:100%;height:auto" role=3D"presentation" data-testid=3D"image-2=
+9"><tbody><tr><td style=3D"border:0;border-radius:0;margin:0" valign=3D"top=
+"><img alt=3D"" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/=
+images/deb45101-8581-6ffc-0f0d-e2f6772ff452.png" width=3D"222" height=3D"au=
+to" style=3D"display:block;max-width:100%;height:auto;border-radius:0" clas=
+s=3D"imageDropZone mceImage" data-block-id=3D"29"/></td></tr></tbody></tabl=
+e><div><!--<![endif]--></div><div>
+<!--[if mso]>
+<span class=3D"mceImageBorder" style=3D"border:0;border-width:2px;vertical-=
+align:top;margin:0"><img role=3D"presentation" class=3D"imageDropZone mceIm=
+age" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/images/deb4=
+5101-8581-6ffc-0f0d-e2f6772ff452.png" alt=3D"" width=3D"222" height=3D"auto=
+" style=3D"display:block;max-width:222px;width:222px;height:auto"/></span>
+<![endif]-->
+</div></td></tr><tr data-tcbs-block=3D"signature"><td style=3D"background-c=
+olor:transparent;padding-top:0;padding-bottom:0;padding-right:0;padding-lef=
+t:0;border:0;border-radius:0" valign=3D"top" class=3D"mceImageBlockContaine=
+r" align=3D"center" id=3D"b28"><div><!--[if !mso]><!--></div><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ style=3D"border-collapse:separate;margin:0;vertical-align:top;max-width:10=
+0%;width:100%;height:auto" role=3D"presentation" data-testid=3D"image-28"><=
+tbody><tr><td style=3D"border:0;border-radius:0;margin:0" valign=3D"top"><i=
+mg alt=3D"" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/imag=
+es/d2c88d05-2f91-f00d-5b04-96eabda771b0.png" width=3D"660" height=3D"auto" =
+style=3D"display:block;max-width:100%;height:auto;border-radius:0" class=3D=
+"imageDropZone mceImage" data-block-id=3D"28"/></td></tr></tbody></table><d=
+iv><!--<![endif]--></div><div>
+<!--[if mso]>
+<span class=3D"mceImageBorder" style=3D"border:0;border-width:2px;vertical-=
+align:top;margin:0"><img role=3D"presentation" class=3D"imageDropZone mceIm=
+age" src=3D"https://mcusercontent.com/dacbe68074cece4d07a7a37ed/images/d2c8=
+8d05-2f91-f00d-5b04-96eabda771b0.png" alt=3D"" width=3D"660" height=3D"auto=
+" style=3D"display:block;max-width:660px;width:660px;height:auto"/></span>
+<![endif]-->
+</div></td></tr><tr><td valign=3D"top" class=3D"mceGutterContainer" id=3D"g=
+utterContainerId-359"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-collapse:separate" role=3D"presentation">=
+<tbody><tr><td style=3D"background-color:#F4F4F4;padding-top:0;padding-bott=
+om:6px;padding-right:0;padding-left:0;border:0;border-radius:0" valign=3D"t=
+op" class=3D"mceLayoutContainer" id=3D"b359"><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" data-block-id=3D"359" id=3D"section_f42a5bba438584fb3fb866260c0586e8" =
+class=3D"mceLayout"><tbody><tr class=3D"mceRow"><td style=3D"background-pos=
+ition:center;background-repeat:no-repeat;background-size:cover" valign=3D"t=
+op"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+role=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mceColumn" id=
+=3D"mceColumnId--17" data-block-id=3D"-17" colspan=3D"12" width=3D"100%"><t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation"><tbody><tr><td style=3D"border:0;border-radius:0" valign=
+=3D"top" align=3D"center" id=3D"b-9"><table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" dat=
+a-block-id=3D"-9"><tbody><tr class=3D"mceRow"><td style=3D"background-posit=
+ion:center;background-repeat:no-repeat;background-size:cover" valign=3D"top=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" ro=
+le=3D"presentation"><tbody><tr><td valign=3D"top" class=3D"mceColumn" id=3D=
+"mceColumnId--21" data-block-id=3D"-21" colspan=3D"12" width=3D"100%"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"p=
+resentation"><tbody><tr><td style=3D"border:0;border-radius:0" valign=3D"to=
+p" id=3D"b364"><table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"364"><tb=
+ody><tr class=3D"mceRow"><td style=3D"background-position:center;background=
+-repeat:no-repeat;background-size:cover" valign=3D"top"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"24" width=3D"100%" role=3D"presentation">=
+<tbody><tr><td style=3D"padding-top:0;padding-bottom:0" valign=3D"top" clas=
+s=3D"mceColumn" id=3D"mceColumnId-361" data-block-id=3D"361" colspan=3D"12"=
+ width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;pad=
+ding-bottom:0;padding-right:0;padding-left:0" valign=3D"top" class=3D"mceGu=
+tterContainer" id=3D"gutterContainerId-360"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:separate" =
+role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padding-bottom:=
+0;padding-right:0;padding-left:0;border:0;border-radius:0" valign=3D"top" i=
+d=3D"b360"><table width=3D"100%" style=3D"border:0;background-color:transpa=
+rent;border-radius:0;border-collapse:separate"><tbody><tr><td style=3D"padd=
+ing-left:14px;padding-right:14px;padding-top:6px;padding-bottom:6px" class=
+=3D"mceTextBlockContainer"><div data-block-id=3D"360" class=3D"mceText" id=
+=3D"d360" style=3D"width:100%"><p class=3D"mcePastedContent"><strong><span =
+style=3D"font-size: 14px">C=C3=B4ng ty C=E1=BB=95 ph=E1=BA=A7n Ch=E1=BB=A9n=
+g kho=C3=A1n K=E1=BB=B9 Th=C6=B0=C6=A1ng </span></strong></p><p class=3D"mc=
+ePastedContent"><span style=3D"font-size: 14px">Email: </span><span style=
+=3D"color:rgb(196, 28, 22);"><span style=3D"font-size: 14px">cskh@tcbs.com.=
+vn</span></span><span style=3D"font-size: 14px"> | website: </span><span st=
+yle=3D"color:rgb(196, 28, 22);"><span style=3D"font-size: 14px">www.tcbs.co=
+m.vn</span></span></p><p class=3D"mcePastedContent"><span style=3D"font-siz=
+e: 14px">T=E1=BA=A7ng 27, 28 v=C3=A0 29, T=C3=B2a C5 D'Capitale, s=E1=BB=91=
+ 119 Tr=E1=BA=A7n Duy H=C6=B0ng, Ph=C6=B0=E1=BB=9Dng Y=C3=AAn H=C3=B2a, H=
+=C3=A0 N=E1=BB=99i, Vi=E1=BB=87t Nam.</span></p><p class=3D"mcePastedConten=
+t"><span style=3D"font-size: 14px">T=E1=BA=A7ng 8, t=C3=B2a nh=C3=A0 Techco=
+mbank S=C3=A0i G=C3=B2n, 23 L=C3=AA Du=E1=BA=A9n, Ph=C6=B0=E1=BB=9Dng S=C3=
+=A0i G=C3=B2n, TP H=E1=BB=93 Ch=C3=AD Minh.</span></p><p class=3D"mcePasted=
+Content last-child"><a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrack.m=
+e/L0/https:%2F%2Fwww.tcbs.com.vn%2Fthong-tin%2Fdang-ky-nhan-ban-tin%2F/1/01=
+0e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/FMXiEK7NcbXlqQ6q=
+JV81nXGql9g=3D258" target=3D"_blank" style=3D"color: #c41c16;"><strong><spa=
+n style=3D"color:rgb(196, 28, 22);"><span style=3D"font-size: 14px">=C4=90=
+=C4=83ng k=C3=BD nh=E1=BA=ADn email</span></span></strong></a><span style=
+=3D"font-size: 14px"> t=E1=BB=AB TCBS.</span></p></div></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody=
+></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+/tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></t=
+r><tr><td style=3D"background-color:#F4F4F4;padding-top:6px;padding-bottom:=
+6px;padding-right:16px;padding-left:16px;border:0;border-radius:0" valign=
+=3D"top" class=3D"mceDividerBlockContainer" id=3D"b357"><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"background-color:#F4F4F4;width:100%" role=3D"presentation" class=3D"mce=
+DividerContainer" data-block-id=3D"357"><tbody><tr><td style=3D"min-width:1=
+00%;border-top-width:1px;border-top-style:solid;border-top-color:#CECECE;li=
+ne-height:0;font-size:0" valign=3D"top" class=3D"mceDividerBlock"> </td></t=
+r></tbody></table></td></tr><tr><td style=3D"background-color:#f4f4f4;paddi=
+ng-top:8px;padding-bottom:8px;padding-right:8px;padding-left:8px;border:0;b=
+order-radius:0" valign=3D"top" class=3D"mceLayoutContainer" id=3D"b11"><tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" role=3D"presentation" data-block-id=3D"11" id=3D"section_7c9f8029=
+1988497d766814cd86401d95" class=3D"mceFooterSection"><tbody><tr class=3D"mc=
+eRow"><td style=3D"background-color:#f4f4f4;background-position:center;back=
+ground-repeat:no-repeat;background-size:cover;padding-top:0px;padding-botto=
+m:0px" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+12" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padding-to=
+p:0;padding-bottom:0" valign=3D"top" class=3D"mceColumn" id=3D"mceColumnId-=
+-3" data-block-id=3D"-3" colspan=3D"12" width=3D"100%"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"><t=
+body><tr><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;paddin=
+g-left:0" valign=3D"top" class=3D"mceGutterContainer" id=3D"gutterContainer=
+Id-9"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" style=3D"border-collapse:separate" role=3D"presentation"><tbody><tr><td s=
+tyle=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;borde=
+r:0;border-radius:0" valign=3D"top" align=3D"center" id=3D"b9"><table width=
+=3D"100%" style=3D"border:0;background-color:transparent;border-radius:0;bo=
+rder-collapse:separate"><tbody><tr><td style=3D"padding-left:8px;padding-ri=
+ght:8px;padding-top:8px;padding-bottom:12px" class=3D"mceTextBlockContainer=
+"><div data-block-id=3D"9" class=3D"mceText" id=3D"d9" style=3D"display:inl=
+ine-block;width:100%"><p style=3D"text-align: left;"><a href=3D"http://y1gh=
+rnzq.r.ap-southeast-1.awstrack.me/L0/http:%2F%2Fwww.facebook.com%2Ftechcoms=
+ecurities/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/54=
+y5yfkv4gv4_nEY4nmZ2CU1kh0=3D258" target=3D"_blank"><img src=3D"https://mcus=
+ercontent.com/dacbe68074cece4d07a7a37ed/images/54e71bd3-c9e8-022d-e1b0-c6a4=
+cfc63d30.png" alt=3D"" style=3D"border: 0px initial; height: 48px; max-widt=
+h: 100%;" height=3D"48"/></a> <a href=3D"https://y1ghrnzq.r.ap-southeast-1.=
+awstrack.me/L0/https:%2F%2Ftcinvest.tcbs.com.vn%2Fguest%2Flogin%3FreturnUrl=
+=3D%252Fhome%26openAccount=3Dtrue%26utm_source=3DEmail%26utm_medium=3DFoote=
+r%26utm_campaign=3Dmtk-sodep/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7=
+446e43707-000000/eMpmIOg-ZlOXNOfgBZ_viyKOhQA=3D258"><img src=3D"https://mcu=
+sercontent.com/dacbe68074cece4d07a7a37ed/images/d8bee7ad-6028-6b49-b6a0-819=
+73eaa7a26.png" alt=3D"" style=3D"border: 0px; height: 48px; max-width: 100%=
+;" height=3D"48"/></a> <a href=3D"https://y1ghrnzq.r.ap-southeast-1.awstrac=
+k.me/L0/https:%2F%2Fwww.youtube.com%2Fc%2FTechcomSecurities%2Ffeatured/1/01=
+0e01a217d08e95-58910eb6-24f3-4dfa-a57b-de7446e43707-000000/Woah7K9WcAFfTEZq=
+3UesleFrTFo=3D258"><img src=3D"https://mcusercontent.com/dacbe68074cece4d07=
+a7a37ed/images/6eaf1a8b-893d-5007-d230-cdea4d6dd627.png" alt=3D"" style=3D"=
+border: 0px; height: 48px; max-width: 100%;" height=3D"48"/></a></p><p styl=
+e=3D"text-align: justify;"><span style=3D"color:rgb(127, 140, 141);"><span =
+style=3D"font-size: 12px"><span style=3D"font-family: arial, helvetica, san=
+s-serif">S=E1=BB=9F d=C4=A9 Qu=C3=BD kh=C3=A1ch nh=E1=BA=ADn =C4=91=C6=B0=
+=E1=BB=A3c th=C6=B0 =C4=91i=E1=BB=87n t=E1=BB=AD n=C3=A0y b=E1=BB=9Fi v=C3=
+=AC Qu=C3=BD kh=C3=A1ch =C4=91=C3=A3 ch=E1=BA=A5p thu=E1=BA=ADn cho C=C3=B4=
+ng ty c=E1=BB=95 ph=E1=BA=A7n Ch=E1=BB=A9ng kho=C3=A1n K=E1=BB=B9 Th=C6=B0=
+=C6=A1ng (Techcom Securities) g=E1=BB=ADi =C4=91=E1=BA=BFn cho Qu=C3=BD kh=
+=C3=A1ch c=C3=A1c th=C3=B4ng tin v=C3=A0 ch=C6=B0=C6=A1ng tr=C3=ACnh khuy=
+=E1=BA=BFn m=C3=A3i li=C3=AAn quan =C4=91=E1=BA=BFn s=E1=BA=A3n ph=E1=BA=A9=
+m v=C3=A0 d=E1=BB=8Bch v=E1=BB=A5 c=E1=BB=A7a Techcom Securities.</span></s=
+pan></span></p><p style=3D"text-align: justify;"><a href=3D"https://y1ghrnz=
+q.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tcbs.com.vn%2Fthong-tin%2=
+Fquan-ly-lua-chon-nhan-ban-tin%2F/1/010e01a217d08e95-58910eb6-24f3-4dfa-a57=
+b-de7446e43707-000000/3uFkETYbGmpfcqxAQmR8g8yidPg=3D258" target=3D"_blank">=
+<span style=3D"font-size: 12px">H=E1=BB=A7y nh=E1=BA=ADn c=C3=A1c email</sp=
+an></a><span style=3D"color:#7f8c8d;"><span style=3D"font-size: 12px"> ti=
+=E1=BA=BFp theo.</span></span></p><p class=3D"mcePastedContent last-child">=
+<br/><span style=3D"color:rgb(245, 245, 245);">{{{Unsubscribe}}}</span></p>=
+</div></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td=
+ style=3D"border:0;border-radius:0" valign=3D"top" class=3D"mceLayoutContai=
+ner" align=3D"center" id=3D"b-2"><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-bl=
+ock-id=3D"-2"><tbody><tr class=3D"mceRow"><td style=3D"background-position:=
+center;background-repeat:no-repeat;background-size:cover;padding-top:0px;pa=
+dding-bottom:0px" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"24" width=3D"100%" role=3D"presentation"><tbody></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table><!--[if (gte mso =
+9)|(IE)]></td></tr></table><![endif]--></td></tr></tbody></table>
+</td>
+</tr>
+</tbody></table>
+</center>
+<script type=3D"text/javascript"  src=3D"/ZCIdLmCLCTBy5SxW0ju81Uqd/Yhu3S4mS=
+bVXcQzYaXa/DTFTQwE/OWkEA0/cQCTcB"></script><img alt=3D"" src=3D"https://y1g=
+hrnzq.r.ap-southeast-1.awstrack.me/I0/010e01a217d08e95-58910eb6-24f3-4dfa-a=
+57b-de7446e43707-000000/nXTRe_Wf8oyPTdsCOGBnfid7AIU=3D258" style=3D"display=
+: none; width: 1px; height: 1px;">
+</body></html>
+------=_Part_21739_870300441.1795695873672--
