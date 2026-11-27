@@ -42,7 +42,7 @@ Mục đích từng thư mục:
 - `tickers/<MÃ>.md`: mỗi mã cổ phiếu một file, tên viết hoa (vd `GMD.md`). Theo dõi diễn biến, khuyến nghị và quyết định với mã đó theo thời gian.
 - `themes/<kebab-case>.md`: chủ đề vĩ mô kéo dài nhiều ngày/tuần (vd `us-section-301.md`). Theo dõi diễn biến và tác động lên thị trường/mã.
 - `reports/index.md`: bảng danh sách báo cáo phân tích (ngày, mã, tiêu đề, nguồn, link PDF), mới nhất ở dưới.
-- `data/market-daily.csv`: mỗi ngày giao dịch một dòng theo đúng header `date,vnindex,change_pct,liquidity_bn,foreign_net_bn,usd_vnd`. `date` dạng YYYY-MM-DD; `liquidity_bn` và `foreign_net_bn` tính bằng tỷ đồng.
+- `data/market-daily.csv`: mỗi ngày giao dịch một dòng theo đúng header `date,vnindex,change_pct,liquidity_bn,foreign_net_bn,usd_vnd`. `date` dạng YYYY-MM-DD; `liquidity_bn` là giá trị **khớp lệnh trên HoSE** (không gồm thoả thuận), tỷ đồng; `foreign_net_bn` là giá trị ròng của khối ngoại trên HoSE, tỷ đồng, **âm khi bán ròng**; `usd_vnd` là **tỷ giá trung tâm do NHNN niêm yết**.
 
 Quy ước:
 - **Khuyến nghị luôn ghi rõ nguồn và ngày**, dạng `TCBS: <khuyến nghị> (YYYY-MM-DD)`. Viết **tách khỏi quyết định của mình**: quyết định riêng ghi ở dòng/mục riêng `Quyết định của mình: …`, không trộn chung một câu.
