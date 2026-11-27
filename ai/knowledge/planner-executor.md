@@ -2,7 +2,7 @@
 title: Planner–Executor (model routing cho agent)
 tags: [agents, model-routing, cost-optimization, coding-agents]
 sources:
-  - "[[sources/the-batch/2026-11-27]]"
+  - "[[ai/sources/the-batch/2026-11-27]]"
 updated: 2026-11-27
 ---
 
@@ -35,5 +35,5 @@ Kết luận của The Batch: model tốt nhất cho một task coding có thể
 - Khi so chi phí, ghi lại **tổng token và thời gian mỗi task**, không chỉ đơn giá.
 
 ## Nguồn
-- [[sources/the-batch/2026-11-27]] (mục 1: Gemini 4 Hydrogen & Neon + Antigravity Orchestrator)
+- [[ai/sources/the-batch/2026-11-27]] (mục 1: Gemini 4 Hydrogen & Neon + Antigravity Orchestrator)
 - [Antigravity docs: models](https://antigravity.google/docs/models) · [Claude Code advisor](https://code.claude.com/docs/en/advisor) · [Codex subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) · [Sakana Fugu](https://www.deeplearning.ai/the-batch/fugu-blends-models-task-by-task)

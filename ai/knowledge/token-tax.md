@@ -2,7 +2,7 @@
 title: Token Tax (thiên lệch tokenizer theo ngôn ngữ)
 tags: [tokenization, llm-cost, multilingual, fairness]
 sources:
-  - "[[sources/the-batch/2026-11-27]]"
+  - "[[ai/sources/the-batch/2026-11-27]]"
 updated: 2026-11-27
 ---
 
@@ -37,5 +37,5 @@ Các nghiên cứu trước:
 - Khi chọn model cho nội dung tiếng Việt, tính cả hiệu quả tokenizer vào chi phí thực, không chỉ so đơn giá.
 
 ## Nguồn
-- [[sources/the-batch/2026-11-27]] (mục 3: "Token Tax")
+- [[ai/sources/the-batch/2026-11-27]] (mục 3: "Token Tax")
 - [CLEAR: The Tokenizer Tax](https://clear-languages.org/blog/the-tokenizer-tax) · [FLORES-200](https://github.com/facebookresearch/flores/blob/main/flores200/README.md) · [Petrov et al. 2023](https://arxiv.org/abs/2305.15425) · [Ahia et al. 2023](https://arxiv.org/abs/2305.13707) · [Nghiên cứu tokenizer GPT-4o 2024](https://arxiv.org/html/2406.11214v2)
